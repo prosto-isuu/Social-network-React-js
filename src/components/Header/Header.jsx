@@ -1,9 +1,12 @@
 import React from 'react'
-import s from'./Header.css'
+import './Header.css'
+
 function Header() {
-            <header className='header'>
-                <img src='https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg'></img>
-            </header>
+    return(
+        <div className="header">
+            <h1>Hello world</h1>
+        </div>
+    )
 }
 
 export default Header;

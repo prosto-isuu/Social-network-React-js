@@ -1,6 +1,4 @@
 .profile {
-    grid-area: c;
-    background-color: aqua;
-
-
+    grid-area: content;
+    background: green;
 }

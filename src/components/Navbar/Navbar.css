@@ -1,6 +1,6 @@
 .nav {
-    grid-area: n;
-    background-color: bisque;
+    grid-area: nav;
+    background: bisque;
 
 }
 
