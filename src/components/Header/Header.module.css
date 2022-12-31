@@ -1,0 +1,14 @@
+.header {
+    grid-area: header;
+    background: Aqua;
+}
+
+.header_title {
+    background-color: darkred
+;
+}
+
+.header_logo img {
+    width: 50px;
+    height: 50px;
+}
