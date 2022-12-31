@@ -9,8 +9,8 @@ const Profile = () => {
             <div>My post
                 <div>New post</div>
             </div>
-            <div>Post 1</div>
-            <div>Post 1</div>
+            <div classname="item">Post 1</div>
+            <div classname="item">Post 1</div>
 
         </nav>
     )
