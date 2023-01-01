@@ -1,14 +1,12 @@
 import React from 'react'
 import s from './Navbar.module.css'
+import Sidebar from "./Sidebar/Sidebar";
 
 const Navbar = () => {
     return (
-        <nav className={s.nav}>
-            <div className={s.item}><a href='#'>Profile</a></div>
-            <div className={s.item}><a href='#'>Profile</a></div>
-            <div className={s.item}><a href='#'>Profile</a></div>
-            <div className={s.item}><a href='#'>Profile</a></div>
-        </nav>
+        <div className={s.navbar}>
+            <Sidebar/>
+        </div>
     )
 }
 

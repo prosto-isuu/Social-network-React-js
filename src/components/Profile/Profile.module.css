@@ -2,3 +2,8 @@
     grid-area: content;
     background: green;
 }
+
+.img {
+    justify-content: center;
+    background-color: darkred;
+}
