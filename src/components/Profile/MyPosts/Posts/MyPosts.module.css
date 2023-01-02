@@ -2,3 +2,14 @@
     grid-area: content;
     background: green;
 }
+
+.myPosts img {
+    width: 100px;
+    height: 100px;
+}
+
+.myPosts {
+    color: gold;
+    font-size: 20px;
+    font-family: -apple-system;
+}
