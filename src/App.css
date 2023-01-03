@@ -8,7 +8,12 @@
     /*grid-gap: 10px;*/
 }
 
-
+.app-wrapper-content {
+.profile {
+    grid-area: content;
+    background: green;
+}
+}
 
 
 
