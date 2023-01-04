@@ -9,11 +9,13 @@
 }
 
 .app-wrapper-content {
+    padding: 20px;
+}
 .profile {
     grid-area: content;
     background: green;
 }
-}
+
 
 
 

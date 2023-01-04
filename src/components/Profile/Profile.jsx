@@ -9,8 +9,6 @@ const Profile = () => {
             <img src="https://i.ibb.co/285sgtC/iphone-14-pro-finish-unselect-gallery-1-202209-GEO-US-removebg-1.png"/>
             </div>
             <MyPosts/>
-            <MyPosts/>
-            <MyPosts/>
         </nav>
     )
 }
