@@ -1,6 +1,19 @@
 import React from 'react'
 import s from './ProfileInfo.module.css'
 
+const name = [
+    {age:12, name:'Party'},
+    {age:13, name:'Color'},
+    {age:14, name:'Grid'},
+    {age:15, name:'Number'},
+]
+
+const getName = name.map((name) => {
+    return name.name + 12
+})
+
+console.log(getName)
+
 function ProfileInfo(props) {
     return (
         <div className={s.myPosts}>
