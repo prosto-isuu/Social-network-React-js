@@ -4,10 +4,15 @@ import ProfileInfo from "../../ProfileInfo/ProfileInfo";
 // import Post from
 
 
-const MyPosts = () => {
+const MyPosts = (props) => {
     return (
+        <div>
+            {
+                console.log(props.name)
 
-     <ProfileInfo name="color"/>
+            }
+     <ProfileInfo  />
+        </div>
     )
 }
 

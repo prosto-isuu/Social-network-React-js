@@ -1,0 +1,17 @@
+.item {
+    background-color: gray;
+    display: grid;
+    padding: 10px;
+    justify-content: right;
+}
+
+.messages {
+    display: grid;
+    margin: 10px;
+    background-color: bisque;
+    justify-content: center;
+    align-items: center;
+}
+
+
+

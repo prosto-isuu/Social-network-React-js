@@ -1,9 +1,13 @@
 import React from 'react'
 import s from './Music.module.css'
 
-function Music() {
+function Music(props) {
+    console.log(props ,'rgrgrg')
+
     return(
-        < div > < h1 > Hello Music ! < / h1 > < / div >
+        < div>< h1>
+            Hello {props.music.name}
+        < / h1>< / div>
     )
 }
 

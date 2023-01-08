@@ -25,6 +25,7 @@ function ProfileInfo(props) {
             </div>
             <div className={s.post}>Post 1</div>
             <div className={s.description}> Ava Top!</div>
+            <input name="dima"/>
             <input type='checkbox'/>
         </div>
     )
