@@ -19,7 +19,7 @@ function App(props) {
                     <Route path="/profile" element={<Profile/>}/>
                     <Route exact path="/dialogs" element={<Dialogs stateName={props.appState.currentName} stateMessages={props.appState.DialogsMessageArray}/>}/>
                     <Route path="/news" element={<News/>}/>
-                    <Route path="/music" element={<Music music={props.appState.count} />}/>
+                    <Route path="/music" element={<Music music={props.dispatch} />}/>
                     <Route path="/settings" element={<Settings/>}/>
                     <Route path="/Sayow" element={<Music  />}></Route>
                 </Routes>

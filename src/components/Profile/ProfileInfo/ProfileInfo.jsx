@@ -1,18 +1,13 @@
 import React from 'react'
 import s from './ProfileInfo.module.css'
 
-const name = [
-    {age:12, name:'Party'},
-    {age:13, name:'Color'},
-    {age:14, name:'Grid'},
-    {age:15, name:'Number'},
-]
+let newSetRefs = React.createRef()
 
-const getName = name.map((name) => {
-    return name.name + 12
-})
+const addPost = () => {
+    let text = newSetRefs.current.value;
+    console.log(text)
+}
 
-console.log(getName)
 
 function ProfileInfo(props) {
     return (
@@ -25,8 +20,11 @@ function ProfileInfo(props) {
             </div>
             <div className={s.post}>Post 1</div>
             <div className={s.description}> Ava Top!</div>
-            <input name="dima"/>
-            <input type='checkbox'/>
+            <input name="dima" ref={newSetRefs}/>
+            <input type='text'/>
+            <button onClick={addPost
+            } >Add like</button>
+
         </div>
     )
 }

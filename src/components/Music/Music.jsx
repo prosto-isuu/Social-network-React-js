@@ -1,13 +1,12 @@
 import React from 'react'
 import s from './Music.module.css'
+import {MusicHeader} from './MusicHeader/MusicHeader'
 
 function Music(props) {
-    console.log(props ,'rgrgrg')
-
     return(
-        < div>< h1>
-            Hello {props.music.name}
-        < / h1>< / div>
+        <div className={s.music}>
+            <MusicHeader dispatch={props.music}/>
+        </div>
     )
 }
 

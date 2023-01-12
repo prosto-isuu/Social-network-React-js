@@ -10,7 +10,7 @@ export const Dialogs = (props) => {
     return  (
         <div className={s.dialogs}>
             <DialogsItem posts={props.stateName}/>
-            <DialogsMessage message={props.stateMessages}/>
+            <DialogsMessage message={props.stateMessages} />
         </div>
     )
 }

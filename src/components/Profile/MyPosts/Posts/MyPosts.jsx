@@ -7,10 +7,6 @@ import ProfileInfo from "../../ProfileInfo/ProfileInfo";
 const MyPosts = (props) => {
     return (
         <div>
-            {
-                console.log(props.name)
-
-            }
      <ProfileInfo  />
         </div>
     )

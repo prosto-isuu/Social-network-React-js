@@ -22,7 +22,8 @@
 }
 
 .images {
-    display: flex;
+    display:flex;
+    -ms-flex-direction: revert;
     justify-content: left;
     align-items: center;
 

@@ -16,7 +16,6 @@ export const SidebarFriends = (props) => {
                 <p>{props.name[1].name}</p>
                 <img src="https://pm1.narvii.com/6857/8a2d4a8fe31b643fdc79925b12d36ef3b5d427cfv2_hq.jpg"
                      className={s.logo}/>
-                <p>{props.name[3].name}</p>
             </div>
         </div>
     )

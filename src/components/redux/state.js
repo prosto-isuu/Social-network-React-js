@@ -1,10 +1,12 @@
 
-            let state = {
+let state = {
+            addNewText: 'it',
             currentName: [
                 {name: 'Anya', id: 1},
                 {name: 'Matvey', id: 2},
                 {name: 'Eminem', id: 3},
                 {name: 'Clouse', id: 4},
+                {name: 'Amanbai', id: 4},
 
             ],
 
@@ -18,17 +20,33 @@
                 {name:'No way', id:1},
                 {name:'No way', id:1},
                 {name:'No way', id:1},
-                {name:'No way', id:1},]}
+                {name:'No way', id:1},],
+
+            nameIsFriend : [
+                {name:'Bilie'},
+                {name:'Micle'},
+                {name:'Whashington'},
+                {name:'Amanbai'},],
 
 
 
-export const nameIsFriend = [
-    {name:'Ilias'},
-    {name:'Dubinin'},
-    {name:'Aynya'},
-    {name:'Numa'},
-]
+         }
+//
 
-
+export const dispatch = (action) => {
+    if (action.type = 'alertFunc') {
+        alert('Func worked!')
+    } else {
+        alert('Not worked')
+    }
+}
+//
+// export let addPost =  (message) => {
+//     let newMessage = {
+//         id: 5, message:message,
+//     };
+//
+//     state.DialogsMessageArray.push(newMessage);
+// }
 
 export default state;
