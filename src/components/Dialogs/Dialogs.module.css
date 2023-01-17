@@ -1,33 +1,8 @@
 .dialogs {
-    /*background-color: blueviolet;*/
     display: grid;
     margin: 20px;
     padding: 20px;
     grid-template-columns: 2fr 10fr;
     background-color: blue;
-    /*grid-template-areas: "user messages";*/
 }
 
-.dialogs {
-    /*grid-area: user;*/
-
-}
-
-.dialog {
-    padding: 20px;
-
-}
-
-.dialogsItem {
-
-}
-
-.messages {
-    /*grid-area: messages;*/
-    padding: 20px;
-
-}
-
-.message {
-
-}

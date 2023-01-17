@@ -20,5 +20,22 @@
     align-items: center;
 }
 
+.navbar {
+    background-color: bisque;
+    color: white;
+    padding: 20px;
+}
+
+.navbar a {
+    color: black;
+    list-style: none;
+
+}
+
+.dialogs {
+    padding: 10px;
+    color: black;
+}
+
 
 

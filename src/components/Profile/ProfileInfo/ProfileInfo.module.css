@@ -1,3 +1,9 @@
 .description {
     font-size: 29px;
 }
+
+.myPostBlock div {
+    padding: 10px;
+    background-color: bisque;
+    margin: 5px;
+}

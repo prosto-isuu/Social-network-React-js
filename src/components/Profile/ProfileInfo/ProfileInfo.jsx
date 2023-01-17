@@ -1,32 +1,37 @@
 import React from 'react'
 import s from './ProfileInfo.module.css'
-
-let newSetRefs = React.createRef()
-
-const addPost = () => {
-    let text = newSetRefs.current.value;
-    console.log(text)
-}
-
+import {addPostActionCreator, updateNewPostTextCreator} from "../../redux/state";
 
 function ProfileInfo(props) {
+    const mappingProfile = props.myPosts.map(i => {
+        return <div>
+            <h2>Name:{i.name}, Likes:{i.likesCount}, Message:{i.message}</h2>
+        </div>
+    })
+    const refs = React.createRef()
+
+    let addPosts = () => {
+        props.dispatch(addPostActionCreator())
+    }
+
+    const onChange = () => {
+        let text = refs.current.value
+        let action = updateNewPostTextCreator(text)
+        props.dispatch(action)}
+
+
     return (
         <div className={s.myPosts}>
-                <div>
-                    <img src="https://i.ibb.co/285sgtC/iphone-14-pro-finish-unselect-gallery-1-202209-GEO-US-removebg-1.png"/>>
+            <div className={s.myPostBlock}>
+                <div className={s.input}>
+                    <h1>My posts</h1>
+                    <textarea placeholder='Type..' ref={refs} onChange={onChange} value={props.newPostText}/>
+                    <button onClick={addPosts}>Add Post</button>
                 </div>
-            <div className={s.post}>
-                Add like
+                {mappingProfile}
             </div>
-            <div className={s.post}>Post 1</div>
-            <div className={s.description}> Ava Top!</div>
-            <input name="dima" ref={newSetRefs}/>
-            <input type='text'/>
-            <button onClick={addPost
-            } >Add like</button>
-
         </div>
     )
-}
+    }
 
 export default ProfileInfo;

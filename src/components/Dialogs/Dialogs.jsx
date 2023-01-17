@@ -6,11 +6,10 @@ import {DialogsMessage} from "./DialogsMessage/DialogsMessage";
 
 
 export const Dialogs = (props) => {
-    // debugger;
     return  (
         <div className={s.dialogs}>
-            <DialogsItem posts={props.stateName}/>
-            <DialogsMessage message={props.stateMessages} />
+            <DialogsItem users={props.users}/>
+            <DialogsMessage messages={props.messages} />
         </div>
     )
 }
