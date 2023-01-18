@@ -8,7 +8,8 @@ import {DialogsMessage} from "./DialogsMessage/DialogsMessage";
 export const Dialogs = (props) => {
     return  (
         <div className={s.dialogs}>
-            <DialogsItem users={props.users}/>
+
+            <DialogsItem users={props.users} dialogsPage={props.dialogsPage}/>
             <DialogsMessage messages={props.messages} />
         </div>
     )

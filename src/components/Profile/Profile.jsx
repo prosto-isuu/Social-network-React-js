@@ -7,7 +7,7 @@ const Profile = (props) => {
     return (
         <nav className={s.profile}>
             <MyPosts/>
-            <ProfileInfo myPosts={props.myPosts} dispatch={props.dispatch}/>
+            <ProfileInfo myPosts={props.myPosts} dispatch={props.dispatch} />
         </nav>
     )
 }

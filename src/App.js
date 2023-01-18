@@ -13,8 +13,9 @@ function App(props) {
             <Navbar/>
             <div className="app-wrapper-content">
                 <Routes>
-                    <Route path="/profile" element={<Profile myPosts={props.state.ProfilePage.myPosts} dispatch={props.dispatch}/>}/>
-                    <Route exact path="/dialogs" element={<Dialogs users={props.state.DialogsPage.users} messages={props.state.DialogsPage.myMessage} />}/>
+                    <Route path="/profile" element={<Profile myPosts={props.state.ProfilePage.myPosts} dispatch={props.dispatch} />}/>
+                    {console.log(props.store)}
+                    <Route exact path="/dialogs" element={<Dialogs users={props.state.DialogsPage.users} messages={props.state.DialogsPage.myMessage} dialogsPage={props.dialogsPage} props={props.store}/>}/>
                 </Routes>
             </div>
         </div>

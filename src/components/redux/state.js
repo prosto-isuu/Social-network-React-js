@@ -1,5 +1,7 @@
-const ADD_POSTS = 'ADD-POSTS'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POSTS'
+import profileReducer from "./ProfileReducer";
+
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-POSTS'
+const SEND_MESSAGE = 'SEND_MESSAGE'
 let store = {
     _state: {
         ProfilePage: {
@@ -25,6 +27,8 @@ let store = {
                 {name: 'Elayum', message: 'I`m Good!'},
                 {name: 'Nurjigit', message: 'Hello how are you?'},
             ],
+            newMessageBody : 'Message',
+
         },
         sidebar: {}
     },
@@ -38,34 +42,16 @@ let store = {
         store.callSubscriber = observer
     },
     dispatch: (action) => {
-        if (action.type === ADD_POSTS ) {
-            let newPost = {
-                name: 'k8',
-                message: store._state.ProfilePage.newPostText,
-                likescount: 0
-
-            }
-            store._state.ProfilePage.myPosts.push(newPost)
-            store._state.ProfilePage.newPostText = ''
-            store.callSubscriber(store._state)
-            alert('sayHello')
-        } else if (action.type === UPDATE_NEW_POST_TEXT){
-            store._state.ProfilePage.newPostText = action.newText;
-            store.callSubscriber()
-        } else {
-            alert('I dont Know')
-        }
+       this._state.ProfilePage =  profileReducer(this._state.ProfilePage, action)
+       this._state.DialogsPage =  profileReducer(this._state.DialogsPage, action)
+       this.sidebar =  profileReducer(this.sidebar, action)
+       this.callSubscriber(this._state)
     },
 
 }
 
-export const addPostActionCreator = () => {
-    return {
-        type:'ADD-POSTS'
-    }}
-export const updateNewPostTextCreator = () => {
-    return {
-        type:'UPDATE-NEW-POSTS',
-    }
-}
+export const addPostActionCreator = () => ({type:'ADD-POSTS'})
+export const updateNewPostTextCreator = () => ({type:'UPDATE-NEW-POSTS',})
+export const sendMessageCreator = () => ({type: SEND_MESSAGE,})
+export const updateNewMessageBody = (body) => ({type:UPDATE_NEW_MESSAGE_BODY,body:body})
 export default store;
