@@ -4,15 +4,9 @@ import {NavLink} from "react-router-dom";
 
 
 export const DialogsMessage = (props) => {
-
-const mappingMessage = props.messages.map( i => {
-    return <div className={s.hihgSocre}>{i.message}</div>
-})
     return (
-<div className={s.navbar}>
-        <div className={s.dialogs}>
-            {mappingMessage}
+        <div>
+            {props.message}
+            <button>Send message</button>
         </div>
-</div>
-    )
-}
+    )}

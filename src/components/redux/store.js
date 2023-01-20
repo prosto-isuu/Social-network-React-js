@@ -1,7 +1,5 @@
 import profileReducer from "./ProfileReducer";
 
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-POSTS'
-const SEND_MESSAGE = 'SEND_MESSAGE'
 let store = {
     _state: {
         ProfilePage: {
@@ -50,8 +48,8 @@ let store = {
 
 }
 
-export const addPostActionCreator = () => ({type:'ADD-POSTS'})
-export const updateNewPostTextCreator = () => ({type:'UPDATE-NEW-POSTS',})
-export const sendMessageCreator = () => ({type: SEND_MESSAGE,})
-export const updateNewMessageBody = (body) => ({type:UPDATE_NEW_MESSAGE_BODY,body:body})
+export const actionCretor = {
+    type:'UPDATE_NEW_MESSAFE_BODY'
+}
+
 export default store;
