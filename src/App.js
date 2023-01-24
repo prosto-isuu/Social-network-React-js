@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import {Dialogs} from './/components/Dialogs/Dialogs'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import UsersContainer from "./components/Users/Users";
 
 function App(props) {
     return (
@@ -13,13 +14,15 @@ function App(props) {
                 <Navbar/>
                 <div className="app-wrapper-content">
                     <Routes>
-                        <Route path="/profile" element={<Profile store={props.store}/>}/>
-                        <Route exact path="/dialogs" element={<Dialogs store={props.store}/>}/>}/>
+                        <Route path="/profile" element={<Profile/>}/>
+                        <Route exact path="/dialogs" element={<Dialogs/>}/>}/>
+                        <Route path="/users" element={<UsersContainer/>}></Route>
                     </Routes>
                 </div>
             </div>
         </BrowserRouter>
     );
 }
+
 //
 export default App;

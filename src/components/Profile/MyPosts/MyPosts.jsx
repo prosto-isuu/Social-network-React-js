@@ -1,14 +1,35 @@
 import React from 'react'
 import s from './MyPosts.module.css'
+import {connect} from "react-redux";
 
 
 const MyPosts = (props) => {
+    {console.log(props.MyPost.myPosts)}
+    const maptoMap = props.MyPost.myPosts.map( i => {
+        return <div>
+            <img src="https://i.pinimg.com/736x/aa/58/b2/aa58b22a60837ad32566671e54247ec8.jpg"/>
+            <h1 key={i.likesCount}>{i.name}</h1>
+            <h2>{i.message}</h2>
+        </div>})
     return (
         <div className={s.img}>
-            <img src="https://images.unsplash.com/photo-1612975702762-7cc2733b3e75?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"/>
-            <button>Add like</button>
+            {maptoMap}
         </div>
     )
 }
+const mapStateToProps = (state) => {
+    return{
+        MyPost: state.Profile
+    }
+}
 
-export default MyPosts;
+const mapToDispatchToProps = (dispatch) => {
+    return{
+
+    }
+}
+
+
+const MyPostsContainer = connect(mapStateToProps, )(MyPosts)
+
+export default MyPostsContainer;

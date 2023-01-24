@@ -1,13 +1,18 @@
 import React from 'react'
 import s from './Profile.module.css'
-import ProfileInfoContainer from "./ProfileInfo/ProfileInfoContainer";
-import MyPostsContainer from "./MyPosts/MyPostContainer";
+import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import axios from 'axios'
 
 const Profile = (props) => {
+    axios.get('https://jsonplaceholder.typicode.com/todos/1')
+        .then(response => response.json())
+        .then(json => console.log(json))
+
     return (
         <nav className={s.profile}>
-            <MyPostsContainer store={props.store}/>
-            <ProfileInfoContainer store={props.store} />
+            <MyPosts/>
+            <ProfileInfo/>
         </nav>
     )
 }

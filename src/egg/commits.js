@@ -1,3 +1,94 @@
+// }
+// let newPost = {
+//     name: 'k8',
+//     message: state.ProfilePage.newPostText,
+//     likescount: 0
+// const profileReducer = (state = initialState, action) => {
+//     switch (action.type) {
+//         case ADD_POSTS: {
+//             let newPost =
+//             state.myPosts.push(newPost)
+//             state.newPostText = ''
+//         }
+//         case UPDATE_NEW_POST_TEXT: {
+//             state.newPostText = action.newText;
+//         }
+//         default:
+//             return state
+//     }}
+//
+// export const addPostActionCreator = () => ({type:'ADD-POSTS'})
+// export const updateNewPostTextCreator = () => ({type: UPDATE_NEW_POST_TEXT,})
+// let initialState =  {
+//     newPostText: '',
+//         myPosts: [
+//         {name: 'Henry!', message: 'Давай ты сможешь!', likesCount: 1},
+//         {name: 'igor!', message: 'Давай ты сможешь!', likesCount: 2},
+//         {name: 'Hugo!', message: 'Давай ты сможешь!', likesCount: 3},
+//         {name: 'Impact!', message: 'Давай ты сможешь!', likesCount: 4},
+//         {name: 'Raim!', message: 'Давай ты сможешь!', likesCount: 5},
+//     ],}
+//
+// const ProfileReducer = (state, action) => {
+//     switch (action.type) {
+//         case ADD_POSTS : {{
+//             let newPost = {name:'K', message:'Hello World', likesCount:1}
+//             let stateCopy = {...state}
+//             stateCopy.posts = [...state.posts]
+//             stateCopy.posts.push(newPost)
+//             state.newPostText = ''
+//             return stateCopy
+//         }}
+//         case UPDATE_NEW_POST_TEXT: {
+//             let stateCopy = {...state}
+//             stateCopy = {...state.newPostText}
+//             stateCopy.newPostText = '';
+//             return stateCopy
+//
+//         }
+//         default: return state
+//     }
+// }
+// // const SEND_MESSAGE = 'SEND_MESSAGE'
+// // const UPDATE_NEW_MESSAFE_BODY = 'UPDATE_NEW_MESSAFE_BODY'
+// //
+// // let initialState = {
+// //     users: [
+// //
+// //         {name: 'Oleg', id: 2},
+// //         {name: 'Ayana', id: 3},
+// //         {name: 'Andrey', id: 4},
+// //     ],
+// //         myMessage: [
+// //
+// //     {name: 'Nurbo', message: 'Hello how are you?'},
+// //     {name: 'Elayum', message: 'I`m Good!'},
+// //     {name: 'Nurjigit', message: 'Hello how are you?'},
+// // ],
+// //     newMessageBody : 'Message',
+// //
+// // }
+// const dialogsReducer = (state = initialState, action) => {
+//     switch (action.type) {
+//         case UPDATE_NEW_MESSAFE_BODY : {
+//             state.newMessageBody = action.body;
+//         }
+//         case SEND_MESSAGE : {
+//             let body =  state.newMessageBody = action.body;
+//             state.newMessageBody = action.body = '';
+//             let newMessage = {name:1, message:body}
+//             state.myMessage.push(newMessage)
+//         }
+//
+//         default: return state
+//     }
+// }
+// export const updateNewMessageBody = (body) => ({type:UPDATE_NEW_MESSAFE_BODY,body:body})
+//
+// export const sendMessageCreator = () => ({type: SEND_MESSAGE,})
+//
+//
+// export default dialogsReducer;
 
 // export const DialogsItem = (props) => {
 //     const mappingUsers = props.users.map( i => {
