@@ -1,100 +1,103 @@
-// import {followACR, setUsersActionCreator, unfollowACR} from "../redux/UsersReducers";
-// import {connect} from "react-redux";
-// import React from 'react'
-// import s from './Users.module.css'
-// import axios from "axios";
-// import UserPhoto from '../assets/images/dogStyle.jpeg'
-// //
-// class Users extends React.Component{
+import React, {useEffect, useState} from "react";
+import s from "./Users.module.css";
+import UserPhoto from '../assets/images/dogStyle.jpeg'
+import axios from "axios";
+import {NavLink} from "react-router-dom";
 //
-//     componentDidMount() {
+// const Users = (props) => {
 //
-//     }
-//         //
-//     onChanged = (pageNumber) => {
-//     this.props.setCurrentPage(pageNumber)
-// axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.pageNumber}&count=${this.props.PageSize}`).then( response => response => {
-// axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.pageNumber}&count=${this.props.PageSize}`).then( response => response => {
-// //             this.props.setUser(response.date.items)
-//         })
+//     const mappingUser = props.users( i => {
+//     return <div>
+//         <div>
+//             Hello world!
+//         </div>
+//     </div>}
+//     )}
+//     return(
+//         <div>
+//             <div className={s.Users}>
+//                 {pages.map( i => { return <span className={props.CurrentPage === s.selectedPage } onClick={
+//                     () => {props.onChanged(i)}}>{i}</span>})}
+//                 {
+//                     props.users.map( u => { <div key={u.id}></div>
+//
+//                     })
+//                 }
+//             </div>
+//         </div>
+//     )
 // }
-//
-//     render() {
-//         let pagesCount = Math.ceil(this.props.totalCount / this.props.pageSize)
-//         let pages = []
-//         for (let i = 0; i <= pagesCount; i++) {
-//             pages.push(i);
-//         return <div>
+// const mappingUsers =
+// let pagesCount = Math.ceil()
+// let pages = []
+// for (let i = 0; i <= pagesCount; i++) {
+//     pages.push(i)
+// }
+// const mappinUsers = props.users.map( i => {
+//     return <div>
+//         <div className={s.usersBlock}>
+//             <img src={UserPhoto? i = null : UserPhoto}/>
+//             <h1>{props.name}</h1>
+//         </div>
+//         <div className={s.InfoBlock}>
 //             <div>
-//         {pages.map(i => {
-//             return <span className={this.props.CurrentPage === s.selectedPage}
-//              onClick={() => {this.onChanged(i)}>{i}</span>
-//         })}
-//             <div>2</div>
-//             <div>3</div>
-//             <div>4</div>
+//                 <div>
+//                     Info will be here!
+//                 </div>
 //             </div>
-//             const mappingUser = this.props.Users.users.map(i => {
-//             <div className={s.usersBlock}>
-//             <div className={s.imgBlock}>
-//             <div><img src={UserPhoto}/></div>
-//             <div>{i.followed ?
-//             <button onClick={() => {
-//             this.props.Followed(i.id)
-//         }
-//         }>Подписаться</button>
-//             :
-//             <button onClick={() => {
-//             this.props.Unfollowed(i.id)
-//         }
-//         }>Отписаться</button>}</div>
-//             </div>
-//             <div className={s.userAndStatus}>
-//             <div className={s.usersRegion}>
-//             <div className={s.name}>{`Имя: ${i.fullName}`}</div>
-//             <div>Регион Город:</div>
-//             </div>
-//             <div className={s.usersStatus}>Статус:{i.status}</div>
-//             </div>
-//             </div>
-//         }
-//             <div>
-//         {mappingUser}
-//             <button onClick={() => {this.props.callAlert()}}>Call alert
-//             </button>
-//             </div>
-//             </div>
-//         }};
+//             <div></div>
+//         </div>
+//     </div>
+// })
+// totalCount = 10  / pageSize = 5
+const Users = (props) => {
+    // let pagesCount = Math.ceil(props.totalCount / props.pageSize)
+    // let pages = []
+    // for (let i = 0; i <= pagesCount; i++) {
+    //     pages.push(i);
+    const [data, setData] = useState([])
+    useEffect(()=>{
+        axios.get("https://jsonplaceholder.typicode.com/users").then( response => {
+            setData(response.data)
 
+        })
+    })
+    // console.log(data)
+    const mappingUsers = data.map( i => {
+        return <div>
+        <div className={s.usersBlock}>
+            <div>
+                <div className={s.imgBlock}>
+                    <NavLink>
+                    <img src={UserPhoto} />
+                    </NavLink>
+                </div>
+            </div>
+            <div className={s.userAndStatus}>
+                <div>
+                    <h1 className={s.name}>{i.name}</h1>
+                    <div className={s}>{i.username}</div>
+                </div>
+                <div>
+                    <h2 className={s.usersRegion}>Email: {i.email}  country: {i.address.city ? i.address.city : "Bishkek"}</h2>
+                </div>
+            </div>
+        </div>
 
+        </div>
+    })
+    return(
+        <div>
+            <div className={s.span}>
+                {mappingUsers}
+                <span className={s.spanchik}>1</span>
+                <span className={s.spanchik}>2</span>
+                <span className={s.spanchik}>3</span>
+            </div>
+            {/*{mappingUsers}*/}
+        </div>
 
-import {setCurrentPageActionCreator} from "../redux/UsersReducers";
-
-const mapToState = (state) => {
-    return {
-        Users: state.Users.users,
-        PageSize: state.Users.pageSize,
-        totalCount: state.Users.totalCount,
-        CurrentPage: state.Users.CurrentPage,
-    }
+    )
 }
 
-
-const mapToDispatchProps = (dispatch) => {
-    return {
-        Followed: (userId) => {
-            dispatch(followACR(userId))
-        },
-        Unfollowed: (userId) => {
-            dispatch(unfollowACR(userId))
-        },
-        setUser: (users) => {
-            dispatch(setUsersActionCreator(users))
-        },
-        setCurrentPage: (pageNumber) => {
-            dispatch(pageNumber(setCurrentPageActionCreator))
-        }
-    }}
-
-const UsersContainer = connect(mapToState, mapToDispatchProps)(Users)
-export default UsersContainer;
+export default Users;

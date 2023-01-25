@@ -2,6 +2,7 @@ const FOLLOW = "FOLLOW"
 const UNFOLLOW = "UNFOLLOW"
 const SET_USERS = 'SET_USERS'
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE"
+const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING"
 
 const defaultState = {
     users: [
@@ -41,6 +42,7 @@ const initiialState = {
     pageSize : 5,
     totalUsersCounts: 0,
     CurrentPage:1,
+    isFetching: true
 }
 const UsersReducers = (state = initiialState, action) => {
     switch (action.type) {
@@ -74,6 +76,9 @@ const UsersReducers = (state = initiialState, action) => {
             return {
                 ...state, CurrentPage: action.CurrentPage
             }
+        case TOGGLE_IS_FETCHING:{
+            return {...state, isFetching: action.isFetching}
+        }
         default:
             console.log('Default')
             return state
@@ -81,10 +86,11 @@ const UsersReducers = (state = initiialState, action) => {
 }
 
 
-export const followACR = (userId) => ({type: "FOLLOW", userId})
-export const unfollowACR = (userId) => ({type: "UNFOLLOW", userId})
+export const follow = (userId) => ({type: "FOLLOW", userId})
+export const SetIsFetchingActionCreator = (isFetching) => ({type:TOGGLE_IS_FETCHING, isFetching})
+export const unfollow = (userId) => ({type: "UNFOLLOW", userId})
 
-export const setUsersActionCreator = users => ({ type: 'SET_USERS', users })
-export const setCurrentPageActionCreator = (currentPage) => ({type:"SET_CURRENT_PAGE", currentPage:currentPage})
+export const setUsers = users => ({ type: 'SET_USERS', users })
+export const setCurrentPage = (currentPage) => ({type:"SET_CURRENT_PAGE", currentPage:currentPage})
 
 export default UsersReducers;

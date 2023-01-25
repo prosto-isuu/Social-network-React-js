@@ -4,7 +4,9 @@ import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import {Dialogs} from './/components/Dialogs/Dialogs'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import UsersContainer from "./components/Users/Users";
+import UsersApi from "./components/Users/UsersContainer";
+import ApiConnect from "./components/Users/ApiConnect";
+import React from "react";
 
 function App(props) {
     return (
@@ -15,8 +17,9 @@ function App(props) {
                 <div className="app-wrapper-content">
                     <Routes>
                         <Route path="/profile" element={<Profile/>}/>
-                        <Route exact path="/dialogs" element={<Dialogs/>}/>}/>
-                        <Route path="/users" element={<UsersContainer/>}></Route>
+                        <Route exact path="/dialogs" element={<Dialogs/>}/>}
+                        <Route path="/users" element={<UsersApi/>}></Route>
+                        <Route path="/connect" element={<ApiConnect/>}></Route>
                     </Routes>
                 </div>
             </div>

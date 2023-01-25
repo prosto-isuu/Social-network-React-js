@@ -50,3 +50,15 @@
     font-family: "Apple Braille";
     text-transform: uppercase;
 }
+
+.spanchik {
+    border-radius: 3px;
+    padding: 5px;
+    margin: 5px;
+    background-color: gray;
+    color: white;
+}
+
+.spanchik:hover {
+    cursor: pointer;
+}

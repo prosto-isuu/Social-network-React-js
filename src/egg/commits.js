@@ -171,3 +171,56 @@ import {NavLink} from "react-router-dom";
 // })
 
 // console.log(props.store.getState().DialogsPage.users)
+// import UsersApi from "./UsersApi";
+// import Users from "./Users";
+//
+//
+// // import React from 'react'
+// // import axios from "axios";
+// //
+// //
+// // class UsersApiComponent extends React.Component {
+// //     componentDidMount() {
+// //         axios.get("https://jsonplaceholder.typicode.com/users").then(response => {
+// //             this.props.setUser(response.data.items);
+// //             this.props.setTotalUsersCount(response.data.totalCount)
+// //         })
+// //     };
+// //
+// //     onPageChanged = (pageNumber) => {
+// //         this.props.setCurrentPage(pageNumber)
+// //     }
+// //
+// //     render() {
+// //         return (
+// //             <div>
+// //                 {console.log(this.props)}
+// //             </div>
+// //             // {console.log(this.props)}
+// //             // <Users totalUsersCount={this.props.TotalUsersCount} pageSize={this.props.PageSize
+// //             // onPageChanged={this.props.} users={this.props.users}
+// //             //     follow={this.props.users}
+// //             //     unfollow={this.props.users}}/>
+// //         )
+// //
+// //     }
+// // }
+// //
+// //
+// // //     onPageChanged = (e) => {
+// // // class UsersComponents extends React.Component{
+// // //
+// // //     componentDidMount() {
+// // //
+// // //     }
+// // //         //
+// // //     onChanged = (pageNumber) => {
+// // //     this.props.setCurrentPage(pageNumber)
+// // // axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.pageNumber}&count=${this.props.PageSize}`).then( response => response => {
+// // // axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.pageNumber}&count=${this.props.PageSize}`).then( response => response => {
+// // // //             this.props.setUser(response.date.items)
+// // //         })
+// // // }
+// //
+// //
+// // export default UsersApiComponent;
