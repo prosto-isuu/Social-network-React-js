@@ -59,16 +59,15 @@ const Users = (props) => {
     useEffect(()=>{
         axios.get("https://jsonplaceholder.typicode.com/users").then( response => {
             setData(response.data)
-
         })
-    })
-    // console.log(data)
+    }, [])
+    console.log("date",data)
     const mappingUsers = data.map( i => {
         return <div>
         <div className={s.usersBlock}>
             <div>
                 <div className={s.imgBlock}>
-                    <NavLink>
+                    <NavLink to={"/profile/*" + i.id}>
                     <img src={UserPhoto} />
                     </NavLink>
                 </div>
