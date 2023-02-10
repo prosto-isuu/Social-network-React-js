@@ -1,0 +1,30 @@
+// import React from 'react'
+// import {useState} from "react";
+// import { useSelector} from "react-redux";
+//
+// const Fiechers = (props) => {
+//
+//     // const [post, setPost] = useState('Posting...')
+//     // const isOnChange = () => {
+//     //     setPost( (i) => {
+//     //         i = i
+//     //     } )
+//     // }
+//     debugger;
+//     const stateOfPost = useSelector( state => state)
+//     debugger;
+//     console.log(stateOfPost)
+//     return(
+//         <>
+//             <h1>
+//                 {stateOfPost.map( i => {
+//                     return  <div>{i.name}</div>
+//                 } )}
+//             </h1>
+//             <button onClick={() => {alert("Hello")}}>Send name</button>
+//             <button>About name</button>
+//         </>
+//     )
+// }
+//
+// export default Fiechers;

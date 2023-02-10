@@ -1,102 +1,66 @@
-import React, {useEffect, useState} from "react";
-import s from "./Users.module.css";
-import UserPhoto from '../assets/images/dogStyle.jpeg'
-import axios from "axios";
-import {NavLink} from "react-router-dom";
+// let Users = (props) => {
 //
-// const Users = (props) => {
-//
-//     const mappingUser = props.users( i => {
+//     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
+//     let pages = [];
+//     for (let i = 1; i <= pagesCount; i++) {
+//         pages.push(i);
+//     }
 //     return <div>
 //         <div>
-//             Hello world!
+//             {pages.map(p => {
+//                 return <span className={props.currentPage === p && styles.selectedPage}
+//                              onClick={(e) => {
+//                                  props.onPageChanged(p);
+//                              }}>{p}</span>
+//             })}
 //         </div>
-//     </div>}
-//     )}
-//     return(
-//         <div>
-//             <div className={s.Users}>
-//                 {pages.map( i => { return <span className={props.CurrentPage === s.selectedPage } onClick={
-//                     () => {props.onChanged(i)}}>{i}</span>})}
-//                 {
-//                     props.users.map( u => { <div key={u.id}></div>
+//         {
+//             props.users.map(u => <div key={u.id}>
+//                 <span>
+//                     <div>
+//                        <NavLink to={'/profile/' + u.id}>
+//                         <img src={u.photos.small != null ? u.photos.small : userPhoto}
+//                              className={styles.userPhoto}/>
+//                        </NavLink>
+//                     </div>
+//                     <div>
+//                         {u.followed
+//                             ? <button onClick={() => {
 //
-//                     })
-//                 }
-//             </div>
-//         </div>
-//     )
-// }
-// const mappingUsers =
-// let pagesCount = Math.ceil()
-// let pages = []
-// for (let i = 0; i <= pagesCount; i++) {
-//     pages.push(i)
-// }
-// const mappinUsers = props.users.map( i => {
-//     return <div>
-//         <div className={s.usersBlock}>
-//             <img src={UserPhoto? i = null : UserPhoto}/>
-//             <h1>{props.name}</h1>
-//         </div>
-//         <div className={s.InfoBlock}>
-//             <div>
-//                 <div>
-//                     Info will be here!
-//                 </div>
-//             </div>
-//             <div></div>
-//         </div>
-//     </div>
-// })
-// totalCount = 10  / pageSize = 5
-const Users = (props) => {
-    // let pagesCount = Math.ceil(props.totalCount / props.pageSize)
-    // let pages = []
-    // for (let i = 0; i <= pagesCount; i++) {
-    //     pages.push(i);
-    const [data, setData] = useState([])
-    useEffect(()=>{
-        axios.get("https://jsonplaceholder.typicode.com/users").then( response => {
-            setData(response.data)
-        })
-    }, [])
-    console.log("date",data)
-    const mappingUsers = data.map( i => {
-        return <div>
-        <div className={s.usersBlock}>
-            <div>
-                <div className={s.imgBlock}>
-                    <NavLink to={"/profile/*" + i.id}>
-                    <img src={UserPhoto} />
-                    </NavLink>
-                </div>
-            </div>
-            <div className={s.userAndStatus}>
-                <div>
-                    <h1 className={s.name}>{i.name}</h1>
-                    <div className={s}>{i.username}</div>
-                </div>
-                <div>
-                    <h2 className={s.usersRegion}>Email: {i.email}  country: {i.address.city ? i.address.city : "Bishkek"}</h2>
-                </div>
-            </div>
-        </div>
+//                                     ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+//                                         props.toggleFollowingProgress(true, u.id);
+//                                         axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+//                                             withCredentials: true,
+//                                             headers: {
+//                                                 "API-KEY": "b1775b2f-c3a5-4509-8dc9-90b5629de7c3"
+//                                             }
+//                                         })
+//                                             .then(response => {
+//                                                 if (response.data.resultCode == 0) {
+//                                                     props.unfollow(u.id);
+//                                                 }
+//                                                 props.toggleFollowingProgress(false, u.id);
+//                                             });
+//
+//
+//
+//                                     }}>Unfollow</button>
+//                                     : <button onClick={() => {
+//
+//                                     : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+//                                             props.toggleFollowingProgress(true, u.id);
+//                                             axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+//                                                 withCredentials: true,
+//                                                 headers: {
+//                                                     @@ -63,6 +65,7 @@ let Users = (props) => {
+//                                                         if (response.data.resultCode == 0) {
+//                                                             props.follow(u.id);
+//                                                         }
+//                                                         props.toggleFollowingProgress(false, u.id);
+//                                                     });
 
-        </div>
-    })
-    return(
-        <div>
-            <div className={s.span}>
-                {mappingUsers}
-                <span className={s.spanchik}>1</span>
-                <span className={s.spanchik}>2</span>
-                <span className={s.spanchik}>3</span>
-            </div>
-            {/*{mappingUsers}*/}
-        </div>
+const Users = () => {
+    return<>
 
-    )
+    </>
 }
-
-export default Users;

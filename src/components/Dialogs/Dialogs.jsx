@@ -1,13 +1,25 @@
 import React from 'react'
 import s from './Dialogs.module.css'
-import {DialogsMessage} from "./DialogsMessage/DialogsMessage";
-import DialogsItems from "./DialogsItems/DialogsItem";
+import {connect} from "react-redux";
+import DialogMessage from "./Dialogs/DialogMessage";
+import {Navigate} from "react-router-dom";
+import {compose} from "redux";
+import {withAuthRedirect} from "../hoc/WithAuthRedirect";
 
-export const Dialogs = (props) => {
+const Dialogs = (props) => {
     return  (
         <div className={s.dialogs}>
-            <DialogsItems/>
-            <DialogsMessage/>
+            <DialogMessage />
         </div>
     )
 }
+
+const mapToStateToProps = (state) => {
+    return{
+        isAuth: state.Auth.IsAuth
+    }
+}
+export default compose(connect(
+    mapToStateToProps),
+    withAuthRedirect,
+    )(Dialogs)

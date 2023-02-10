@@ -8,8 +8,6 @@ const Navbar = (props) => {
             <div className={s.item}><NavLink to='/profile' activeClassName={s.activeNavlink}>Profile</NavLink>
                 <div className={s.item}><NavLink to='/dialogs'>Dialogs</NavLink></div>
                 <div className={s.item}><NavLink to='/users'>Users</NavLink></div>
-                <div className={s.item}><NavLink to='/music'>Music</NavLink></div>
-                <div className={s.item}><NavLink to='/settings'>Settings</NavLink></div>
             </div>
         </div>
     )

@@ -1,8 +1,7 @@
 import React from 'react'
 import axios from "axios";
 import {connect} from "react-redux";
-import {setUsersProfile} from "../redux/ProfileReducer";
-import ProfileContainer from "./Profile";
+import Profile from "./Profile";
 
 class ProfileContainerAjax extends React.Component {
     componentDidMount() {
@@ -14,7 +13,7 @@ class ProfileContainerAjax extends React.Component {
 
     render() {
         return <>
-            <ProfileContainer Users={this.props}/>
+            <Profile></Profile>
         </>
     }
 }
@@ -28,7 +27,7 @@ const MapToStateToProps = (state) => {
 const MapToDispatchToProps = (dispatch) => {
     return{
         setUsers: (profile) => {
-            dispatch(setUsersProfile(profile))
+            // dispatch((profile))
         }
     }
 }
