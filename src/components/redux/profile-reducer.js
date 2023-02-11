@@ -1,21 +1,85 @@
-const ADD_NEW_POST = "ADD_NEW_MESSAGE"
-const defaultState = {
-    myPosts: [
-        {name:'Henry', message:'Hello world!', likesCount:1},
-        {name:'Ilyas', message:"😍", likesCount: 45},
-        {name:'Arafat', message:"Хоршое получилось фото!", likesCount: 45},],
-    profile: null
-}
-const ProfileReducer = (state = defaultState, action) => {
-    switch (action.type) {
-        case ADD_NEW_POST: {
+import {profileAPI, usersAPI} from "../api/userApi";
+
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SET_USER_PROFILE = 'SET_USER_PROFILE';
+const SET_STATUS = 'SET_STATUS';
+
+let initialState = {
+    posts: [
+        {id: 1, message: 'Hi, how are you?', likesCount: 12},
+        {id: 2, message: 'It`s my first post', likesCount: 11},
+        {id: 3, message: 'Blabla', likesCount: 11},
+        {id: 4, message: 'Dada', likesCount: 11}
+    ],
+    newPostText: 'it-kamasutra.com',
+    profile: null,
+    status: ""
+};
+
+const profileReducer = (state = initialState, action) => {
+
+    switch(action.type) {
+        case ADD_POST: {
+            let newPost = {
+                id: 5,
+                message: state.newPostText,
+                likesCount: 0
+            };
             return {
-                ...state, myPosts: [...state.myPosts, ...action.payload]
+                ...state,
+                posts: [...state.posts, newPost],
+                newPostText: ''
+            };
+        }
+        case UPDATE_NEW_POST_TEXT: {
+            return {
+                ...state,
+                newPostText: action.newText
             }
         }
+        case SET_STATUS: {
+            return {
+                ...state,
+                status: action.status
+            }
+        }
+        case SET_USER_PROFILE: {
+            return {...state, profile: action.profile}
+        }
         default:
-            return state
-}}
+            return state;
+    }
+}
 
-export const AddMessages = (payload) => ({type:ADD_NEW_POST, payload})
-export default ProfileReducer;
+
+export const addPostActionCreator = () => ({type: ADD_POST})
+export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
+export const setStatus = (status) => ({type: SET_STATUS, status})
+
+export const getUserProfile = (userId) => (dispatch) => {
+    usersAPI.getProfile(userId).then(response => {
+        dispatch(setUserProfile(response.data));
+    });
+}
+
+export const getStatus = (userId) => (dispatch) => {
+    profileAPI.getStatus(userId)
+        .then(response => {
+            dispatch(setStatus(response.data));
+        });
+}
+
+export const updateStatus = (status) => (dispatch) => {
+    profileAPI.updateStatus(status)
+        .then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(setStatus(status));
+            }
+        });
+}
+
+export const updateNewPostTextActionCreator = (text) =>
+    ({type: UPDATE_NEW_POST_TEXT, newText: text })
+
+export default profileReducer;

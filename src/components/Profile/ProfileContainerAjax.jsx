@@ -4,13 +4,6 @@ import {connect} from "react-redux";
 import Profile from "./Profile";
 
 class ProfileContainerAjax extends React.Component {
-    componentDidMount() {
-        axios.get("https://jsonplaceholder.typicode.com/photos")
-            .then(response => {
-                this.props.setUsers(response.data)
-            })
-    }
-
     render() {
         return <>
             <Profile></Profile>

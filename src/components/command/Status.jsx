@@ -1,17 +1,32 @@
 import React from 'react';
+import {useState} from "react";
 
 const Status = (props) => {
+    const [editMode, setMode] = useState(false)
+    const [status, setStatus] = useState(props.status)
+    const activeStatus = () => {
+        setMode(true)
+    }
+    const deActiveStatus = () => {
+        setMode(false)
+        props.updateStatus(props.status)
+    }
+    const onStatusChange = (event) => {
+        setStatus(event.currentTarget.value)
+    }
+
     return (
         <div>
-            <div>
-                <span>
-                  {props.datum.body}
+            {!editMode &&
+                <div>
+                <span onDoubleClick={activeStatus}>
+                  {props.datum}
             </span>
-            </div>
-            <div>
-                <input placeholder={props.datum.name}/>
-            </div>
+                </div>}
 
+            {editMode && <div>
+                <input placeholder={status} onBlur={deActiveStatus} autoFocus={true} onChange={onStatusChange }/>
+            </div>}
         </div>
     );
 };

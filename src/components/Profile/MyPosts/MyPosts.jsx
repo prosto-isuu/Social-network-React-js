@@ -17,8 +17,9 @@ const MyPosts = (props) => {
         <div className={s.img}>
             <img src="https://i.ibb.co/R7tP6BD/image-2022-10-11-20-47-16.jpg"/>
             {userRendering}
-            <input type="text" onChange={ event => { console.log(event.target.value) }}/>
-            <button>Add new posts</button>
+            {/*<input type="text" onChange={ event => { console.log(event.target.value) }}/>*/}
+            {/*<button>Add new posts</button>*/}
+            {/*<Status datum={props.status}/>*/}
         </div>
     )
 }
@@ -29,6 +30,5 @@ const mapStateToProps = (state) => {
     }
 }
 
-const MyPostsContainer = connect(mapStateToProps, AddMessages)(MyPosts)
-
-export default MyPostsContainer;
+const MyPostContainer = connect(mapStateToProps, AddMessages)(MyPosts)
+export default MyPostContainer;
