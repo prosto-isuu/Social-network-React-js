@@ -9,23 +9,22 @@ const Status = (props) => {
     }
     const deActiveStatus = () => {
         setMode(false)
-        props.updateStatus(props.status)
+        props.updateStatus(status)
     }
     const onStatusChange = (event) => {
         setStatus(event.currentTarget.value)
+        console.log(event.currentTarget.value)
     }
-
     return (
         <div>
             {!editMode &&
                 <div>
                 <span onDoubleClick={activeStatus}>
-                  {props.datum}
-            </span>
+                    Status:{status}
+                </span>
                 </div>}
-
             {editMode && <div>
-                <input placeholder={status} onBlur={deActiveStatus} autoFocus={true} onChange={onStatusChange }/>
+                <input placeholder={status || "-------"} onBlur={deActiveStatus} autoFocus={true} onChange={onStatusChange} />
             </div>}
         </div>
     );
