@@ -2,16 +2,14 @@ import React, {useEffect, useState} from 'react';
 import Profile from "./Profile";
 import {compose} from "redux";
 import {connect} from "react-redux";
-import {getStatus, updateStatus} from "../redux/profile-reducer";
+import {getStatus, getStatusFake, updateStatus} from "../../redux/profile-reducer";
 import {profileAPI} from "../api/userApi";
+import {authSelector, statusSelector} from "../../redux/selectors/auth-selector";
+import {withAuthRedirect} from "../hoc/WithAuthRedirect";
 const ProfileContainer = (props) => {
     const [status, setStatus] = useState()
-    let userId = 2
-    if (!userId) {
-        userId = 1049;
-    }
     useEffect(() => {
-        setStatus( profileAPI.getStatus(userId) )
+        getStatusFake(2)
     }, [])
     return (
         <>
@@ -22,12 +20,23 @@ const ProfileContainer = (props) => {
 
 const mapToStateToProps = (state) => {
     return{
-        isAuth: state.Auth.IsAuth,
-        status: state.Profile.status
+        isAuth: authSelector(state),
+        status: statusSelector(state)
     }
 }
 
+const mapToStateProps = (state) => {
+    return{
+        cash: state.cash
+    }
+}
+
+
+
+
+
 export default compose(
-    connect(mapToStateToProps, {getStatus, updateStatus}),
+    connect(mapToStateToProps, {getStatus, updateStatus, getStatusFake}),
     // withAuthRedirect
 )(ProfileContainer);
+

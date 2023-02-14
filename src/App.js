@@ -2,14 +2,20 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Dialogs from './/components/Dialogs/Dialogs'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import React from "react";
+import React, {useEffect} from "react";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import {compose} from "redux";
+import {connect} from "react-redux";
 
 
 
 function App(props) {
+    useEffect(() => {
+        // props.getAuthUserData()
+    }, [])
+
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -27,4 +33,11 @@ function App(props) {
     );
 }
 
-export default App;
+const mapToStateToProps = (state) => {
+    return{
+
+    }
+}
+export default compose(
+    connect(mapToStateToProps, )
+)(App);

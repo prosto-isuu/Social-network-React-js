@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useState} from "react";
+import {useForm} from "react-hook-form";
 
 const Status = (props) => {
     const [editMode, setMode] = useState(false)
     const [status, setStatus] = useState(props.status)
+    useEffect((prevProps, prevState ) => {
+        // debugger;
+        // if (status !== props.status){
+        // setStatus(actual => actual = props.status)}
+    }, [status])
     const activeStatus = () => {
         setMode(true)
     }
@@ -13,7 +19,6 @@ const Status = (props) => {
     }
     const onStatusChange = (event) => {
         setStatus(event.currentTarget.value)
-        console.log(event.currentTarget.value)
     }
     return (
         <div>

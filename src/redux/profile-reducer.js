@@ -1,4 +1,4 @@
-import {profileAPI, usersAPI} from "../api/userApi";
+import {profileAPI, usersAPI} from "../components/api/userApi";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -79,6 +79,15 @@ export const updateStatus = (status) => (dispatch) => {
         });
 }
 
+export const getStatusFake = (userId) => {
+    return dispatch => {
+        profileAPI.fakeQuery(userId).then( response => {
+            dispatch(setStatus(response.data))
+        }).then( () => {
+            console.log("finaly")
+        })
+    }
+}
 export const updateNewPostTextActionCreator = (text) =>
     ({type: UPDATE_NEW_POST_TEXT, newText: text })
 

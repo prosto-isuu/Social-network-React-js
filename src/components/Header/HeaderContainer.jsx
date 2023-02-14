@@ -1,6 +1,6 @@
 import Header from "./Header";
 import { useEffect, useState} from "react";
-import {AuthVerification} from "../redux/auth-reducer";
+import {AuthVerification} from "../../redux/auth-reducer";
 import {connect} from "react-redux";
 import axios from 'axios'
 

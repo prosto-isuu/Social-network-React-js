@@ -38,6 +38,9 @@ export const profileAPI = {
     },
     updateStatus(status) {
         return instance.put(`profile/status`, { status: status });
+    },
+    fakeQuery(userId) {
+         return axios.get(`https://social-network.samuraijs.com/api/1.0/profile/status/${userId}`)
     }
 }
 

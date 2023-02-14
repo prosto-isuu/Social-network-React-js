@@ -1,6 +1,6 @@
 import s from "./MyPosts.module.css";
 import {connect} from "react-redux";
-import {followACR} from "../../redux/users-reducers";
+import {followACR} from "../../../redux/users-reducers";
 
 export const DialogMessage = (props) => {
     return (

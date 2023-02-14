@@ -3,6 +3,7 @@ import s from './MyPosts.module.css'
 import defaultUsersPhoto from '../../assets/images/dogStyle.jpeg'
 import {compose} from "redux";
 import {connect} from "react-redux";
+import {postsSelector} from "../../../redux/selectors/auth-selector";
 
 const MyPosts = (props) => {
     const userRendering = props.Posts.map(i => {
@@ -26,7 +27,7 @@ const MyPosts = (props) => {
 };
     const mapStateToProps = (state) => {
         return {
-            Posts: state.Profile.posts
+            Posts: postsSelector(state)
         }
     }
 export default compose(
