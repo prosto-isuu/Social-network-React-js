@@ -10,7 +10,7 @@ function Header(props) {
             <div className={s.header_title}>
             </div>
             <div className={s.loginBlock}>
-                {props.auth? <h1>You are verification</h1> : <h1>You aren`t verification</h1>}
+                {props.auth? <div><img src="https://finance.kz/static/images/default-avatar.png"/></div> : <h1>You aren`t verification</h1>}
             </div>
         </div>
     )

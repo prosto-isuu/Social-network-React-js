@@ -17,13 +17,12 @@
 .loginBlock {
     display: flex;
     justify-content: right;
-    float: right;
 }
-
 .loginBlock a {
     padding: 10px;
     background-color: black;
     color: white;
     list-style: none;
 }
+
 
