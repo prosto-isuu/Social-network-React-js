@@ -3,61 +3,28 @@ import s from './MyPosts.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import {setPostFromProfile} from "../../../redux/profile-reducer";
 import axios from "axios";
+import { BiLike } from 'react-icons/bi';
+import { TfiCommentAlt } from 'react-icons/tfi';
+
+
 
 const MyPosts = (props) => {
-    const [users, setUsers] = useState([])
-    // useEffect( r => {
-    //     axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-    //         setUsers(response.data)
-    //     })
-    // } , [])
-    // const users = useSelector( state => state.Profile.posts)
-    // const dispatch = useDispatch()
-    // if (users.length === 0) {
-    //     dispatch(setPostFromProfile)
-    // }
-    // const func = () => {
-    //     axios.get("https://social-network.samuraijs.com/api/1.0/users").then( response => {
-    //         setUsers(response.data.items)
-    //     })
-    // }
-    // func()
-    // console.log(users)
+    const [posts, setPosts] = useState([])
+    useEffect(() => {
+        const response = axios.get("https://jsonplaceholder.typicode.com/posts").then( res => {
+            setPosts(res.data)
+        })
+       
+        
+    }, [])
 
-    // func()
-    // const mapping = users.map( i => {
-    //     return <div>
-    //     <div className={s.img}>
-    //         <img src="https://4kwallpapers.com/images/walls/thumbs_3t/5865.jpg"/>
-    //         <div>{i.name}</div>
-    //         <div className={s.viewerBlock}>
-    //             <div>Likes{i.id}</div>
-    //             <div>Title</div>
-    //         </div>
-    //     </div>
-    //     <div className={s.interactionBlock}>
-    //         <div>Likes</div>
-    //         <div>Comment</div>
-    //     </div>
-    //     <div className={s.active}>
-    //         <div>
-    //             <textarea name="" id="" cols="50"></textarea>
-    //         </div>
-    //     </div>
-    //     </div>
-
-    // })
-    return (
-        <div className={s.myPosts}>
-    <div className={s.img}>
+    const transformationPosts = posts.map((value, index, array) => {
+        return <div>
+            <div className={s.img}>
         <img src="https://4kwallpapers.com/images/walls/thumbs_3t/5865.jpg"/>
-        <div className={s.viewerBlock}>
-            <div>LikesCount</div>
-            <div>Title</div>
-        </div>
         <div className={s.interactionBlock}>
-            <div>Likes</div>
-            <div>Comment</div>
+            <div><button><BiLike/>{`Нравится | ${value.id}`}</button></div>
+            <div><button><TfiCommentAlt/>{`Комментарии | ${value.title}`}</button></div>
         </div>
         <div className={s.active}>
             <div>
@@ -65,7 +32,24 @@ const MyPosts = (props) => {
             </div>
         </div>
     </div>
-            {/* {mapping} */}
+        </div>
+    })
+
+    return (
+        <div className={s.myPosts}>
+    <div className={s.img}>
+        <img src="https://4kwallpapers.com/images/walls/thumbs_3t/5865.jpg"/>
+        <div className={s.interactionBlock}>
+            <div><button><BiLike/>{`Нравится | ${props.id}`}</button></div>
+            <div><button><TfiCommentAlt/>{`Комментарии | ${props.count}`}</button></div>
+        </div>
+        <div className={s.active}>
+            <div>
+                <textarea name="" id="" cols="50"></textarea>
+            </div>
+        </div>
+    </div>
+    {transformationPosts}
         </div>
 
     );

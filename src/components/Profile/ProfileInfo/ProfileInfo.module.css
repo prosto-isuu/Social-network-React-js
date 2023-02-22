@@ -1,14 +1,14 @@
 .navbar {
     background-color: white;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 5px;
     margin: 10px;
 }
 
 .statusBar img {
     width: 70px;
     height:70px;
-    border-radius: 300px;
+    border-radius: 5px;
 }
 
 .statusBar {
@@ -22,14 +22,19 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 8px;
+    padding: 2px;
 }
 
 .inlineBlock button {
-    padding: 7px;
-    padding-left:9px;
-    padding-right:9px;
-    background-color: blue;
-    color: white;
+    padding: 5px;
     border: none;
+    border-radius: 10px;
+    width: 120px;
+    height: 30px;
+    text-transform: uppercase;
+}
+
+.inlineBlock button:hover {
+    background-color: rgb(184, 182, 182);
+    cursor: pointer;
 }

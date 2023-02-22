@@ -1,64 +1,76 @@
-.usersBlock {
-    padding: 20px;
-    border: 1px solid black;
-    margin: 20px;
-    display: grid;
-    grid-template-columns: 2fr 8fr;
-    border-radius: 30px;
-    background-color: aliceblue;
+.usersWrapper {
+    background-color: #ececec;
+    padding: 10px;
+    border-radius: 15px;
 }
-.usersBlock img {
-    width: 110px;
-    height: 7rem;
+
+.usersBlock {
+    margin: 30px;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    border-radius: 25px;
+    padding: 20px;
+    background-color: white;
+
+}
+
+.imageBar {
+    display: grid;
+    align-items: center;
+}
+
+.imageBar img {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
 }
 
-.imgBlock {
-    background: none;
+.infoBlock {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+.interactionBlock {
+    justify-content: center;
+    align-items: center;
+}
+
+.interactionBlock button {
+    border: none;
+    margin: 4px;
+    border-radius: 50px;
+    width: 120px;
+    padding: 2px;
+    background-color: white;
+    text-transform: uppercase;
+    background: #FFFFFF;
+    opacity: 0.9;
+    border-radius: 80px;
+    background-color: #1a73e8;
+    color: white;
+}
+
+.interactionBlock button:disabled {
+    background-color: white;
+}
+
+.usersInfo {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(240 240 240);
     display: grid;
     justify-content: center;
     align-items: center;
 }
 
-.imgBlock img {
-    padding: 4px;
-}
-
-.imgBlock button {
-    text-transform: uppercase;
-    background: aliceblue;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.userAndStatus {
-    background-color: azure;
-    border-radius: 20px;
-    display: grid;
-    grid-column-start: 2;
-    /*display: flex;*/
-}
-
-.usersRegion {
-    padding: 20px;
-    display: flex;
-    justify-content: space-around;
-
-}
-.name {
-    font-size: 20px;
-    font-family: "Apple Braille";
-    text-transform: uppercase;
-}
-
-.spanchik {
-    border-radius: 3px;
-    padding: 5px;
+.usersInfo div {
     margin: 5px;
-    background-color: gray;
-    color: white;
 }
 
-.spanchik:hover {
-    cursor: pointer;
+.followBlock {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }

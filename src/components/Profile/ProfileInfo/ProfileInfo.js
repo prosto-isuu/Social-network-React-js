@@ -18,10 +18,10 @@ const ProfileInfo = (props) => {
                     </div>
                 </div>
                 <div className={s.inlineBlock}>
-                    <div><RiLiveLine/>Live video</div>
-                    <div><FaRegImage/>Photo video</div>
-                    <div><BsFillEmojiHeartEyesFill/>Feeling</div>
-                    <div><button>Post</button></div>
+                    <button>{<RiLiveLine/>}Live video</button>
+                    <button><FaRegImage/>Photo video</button>
+                    <button><BsFillEmojiHeartEyesFill/>Feeling</button>
+                    <button>Post</button>
                 </div>
             </div>
         </div>

@@ -1,16 +1,18 @@
+#root {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .app-wrapper {
+    background-color: rgb(240 240 240);
+    font-family: 'Montserrat', sans-serif;
     display: grid;
     grid-template-areas:
     "header header header"
     "nav content content";
     grid-template-rows: 100px 1fr;
     grid-template-columns: 3fr 9fr;
-    /*grid-gap: 10px;*/
 }
 
-.app-wrapper-content {
-    padding: 20px;
-}
 .profile {
     grid-area: content;
     background: green;

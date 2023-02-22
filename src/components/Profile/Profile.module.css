@@ -1,8 +1,6 @@
 .profile {
     grid-area: content;
-    background-color: #ececec;
     padding: 20px;
-    border-radius: 15px;
 }
 
 .img {
@@ -16,7 +14,7 @@
 }
 
 .nav {
-    background-color: #ececec;
+    background-color: #fff;
     padding: 10px;
 }
 

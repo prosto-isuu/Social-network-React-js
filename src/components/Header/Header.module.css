@@ -1,18 +1,21 @@
 .header {
     grid-area: header;
-    border-radius: 5px;
+    margin-bottom: 20px;
+    height: 60px;
 }
 
 .header_logo {
+    width: 100%;
+    background-color: white;
     display: grid;
     grid-template-columns: 1fr 4fr;
     align-items: center;
+    position: fixed;
+    justify-content: space-around;
 }
 .img {
-    margin: 10px;
-    /* padding: 10px; */
-    width: 120px;
-    height: 100%;
+    width: 50px;
+    height: 50px;
 }
 
 .loginBlock {
@@ -26,7 +29,6 @@
 }
 
 .inputBlock {
-    padding: 10px;
     display: grid;
     grid-template-columns: 10fr 1fr;
 }
@@ -37,58 +39,41 @@
     grid-template-columns: 8fr 2fr 2fr;
 }
 
-.btn {
-    /* margin-right: 10px; */
-}
-
 .verificationExamination {
     display: flex;
     justify-content: right;
 }
 
 .verificationExamination button {
-	border-radius: 50px;
+    font-family: inherit;
+    color: white;
     padding: 10px;
-    background-color: white;
+    background-color: #1a73e8;
     text-transform: uppercase;
-    background: #FFFFFF;
-    opacity: 0.5;
     border: 1px solid rgba(234, 230, 226, 0.63);
     box-shadow: 8px 8px 16px rgba(206,89,55,0);
-    border-radius: 80px;
+    border-radius: 15px;
 }
 
 .verificationExamination button:hover {
-	border: 1px solid #4c51f9;
-	outline: none;
     cursor: pointer;
 }
 
 .searchBtn {
     border: none;
     margin: 4px;
-    border-radius: 50px;
     width: 50%;
     padding: 2px;
-    background-color: white;
-    text-transform: uppercase;
-    background: #FFFFFF;
-    opacity: 0.9;
     border-radius: 80px;
     background-color: #1a73e8;
     color: white;
 }
 
 .searchBtn:hover {
-    border: 1px solid white;
-	outline: none;
     cursor: pointer;
 }
 
 .input {
-    border: 1px solid gray;
-    margin: 4px;
-    padding: 2px;
-    border-radius: 10px;
-    
+    border: 1px solid rgb(164, 162, 162);
+    border-radius: 5px;
 }

@@ -12,21 +12,17 @@ function Header(props) {
         <div className={s.header}>
             <div className={s.header_logo}>
                 <div>
-                <img src="https://www.coolgenerator.com/Data/Textdesign/202302/dbe453219c08d6a07dace8ad704bf198.png" className={s.img}/>
+                <img src="https://i.ibb.co/RCzFrBG/1.png" className={s.img}/>
                 </div>
                 <div className={s.inputBlock}>
                     <div className={s.auth}>
                     <input type="text" placeholder="Search for something..." className={s.input}/>
                     <button className={s.searchBtn}><BsSearch/></button>
                     <div className={s.verificationExamination}>
-                    {props.isAuth? <div><button className={s.btn}><FaUserSlash/></button></div> : <div><button>Login<CgLogIn/></button></div>}
+                    {isAuth? <div><button className={s.btn}><FaUserSlash/>Entrance</button></div> : <div><button><CgLogIn/>Login</button></div>}
                     </div>
                     </div>
                 </div>
-            </div>
-            <div className={s.header_title}>
-            </div>
-            <div className={s.loginBlock}>
             </div>
         </div>
     )

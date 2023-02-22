@@ -1,10 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 .nav {
     grid-area: nav;
     padding: 5px;
     justify-content: center;
-    font-family: 'Roboto';
 }
 
 .item {
@@ -25,4 +22,18 @@
     text-decoration: none;
 }
 
-/* 778899 */
+
+.profilePhotosBlock {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.profilePhotosBlock img {
+    border-radius: 50%;
+
+}
+
+.headerLogo{
+    
+}

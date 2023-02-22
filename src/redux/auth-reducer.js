@@ -4,7 +4,7 @@ const defaultState = {
     id:null,
     login: null,
     email: null,
-    IsAuth: false,
+    IsAuth: true,
 }
 const AuthReducer = (state = defaultState, action) => {
     switch (action.type) {

@@ -7,13 +7,16 @@ import {FaUserCheck} from "react-icons/fa";
 
 const Navbar = (props) => {
     return (
+        <>
         <div className={s.nav}>
-            <div className={s.item}><NavLink to='/profile' activeClassname="active"><FaUserCheck/>Profile</NavLink></div>
-                <div className={s.item}><NavLink to='/dialogs'><BiMessageDetail/>Messages</NavLink></div>
-                <div className={s.item}><NavLink to='/users'><AiFillHome/>Outside</NavLink></div>
-                <div className={s.item}><NavLink to='/users'><AiFillHome/>Outside</NavLink></div>
-                <div className={s.item}><NavLink to='/users'><AiFillHome/>Outside</NavLink></div>
+        <div className={s.profilePhotosBlock}><img src="https://avatars.mds.yandex.net/get-afishanew/34116/23f200c3f237413557570a7ffcc0d8ba/orig" alt="profile-photos" /></div>
+            <div className={s.item}><NavLink to='/profile' activeClassname="active"><FaUserCheck/>Ислам Таштанбеков</NavLink></div>
+                <div className={s.item}><NavLink to='/dialogs'><BiMessageDetail/>Сообщение</NavLink></div>
+                <div className={s.item}><NavLink to='/users'><AiFillHome/>Друзья</NavLink></div>
+                <div className={s.item}><NavLink to='/new'><AiFillHome/>Лента</NavLink></div>
+
         </div>
+        </>
     )
 }
 export default Navbar;

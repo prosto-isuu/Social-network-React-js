@@ -30,3 +30,24 @@
     padding: 20px;
     background-color: white;
 }
+
+.interactionBlock {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    margin: 5px;
+}
+
+.interactionBlock button {
+        padding: 5px;
+        border: none;
+        border-radius: 10px;
+        /* width: 120px; */
+        /* height: 30px; */
+        text-transform: uppercase;
+}
+
+.interactionBlock button:hover {
+    cursor: pointer;
+    background-color: rgb(184, 182, 182);
+
+}
