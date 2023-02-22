@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/s-network/static/css/main.7247e590.css",
-    "main.js": "/s-network/static/js/main.031729b8.js",
-    "static/css/418.c3fafd8c.chunk.css": "/s-network/static/css/418.c3fafd8c.chunk.css",
-    "static/js/418.8f628fe6.chunk.js": "/s-network/static/js/418.8f628fe6.chunk.js",
-    "index.html": "/s-network/index.html",
-    "main.7247e590.css.map": "/s-network/static/css/main.7247e590.css.map",
-    "main.031729b8.js.map": "/s-network/static/js/main.031729b8.js.map",
-    "418.c3fafd8c.chunk.css.map": "/s-network/static/css/418.c3fafd8c.chunk.css.map",
-    "418.8f628fe6.chunk.js.map": "/s-network/static/js/418.8f628fe6.chunk.js.map"
+    "main.css": "/IsuTashtanbekov/s-network.git/static/css/main.33cda895.css",
+    "main.js": "/IsuTashtanbekov/s-network.git/static/js/main.517edeba.js",
+    "static/css/916.454b34a9.chunk.css": "/IsuTashtanbekov/s-network.git/static/css/916.454b34a9.chunk.css",
+    "static/js/916.c91b0f0f.chunk.js": "/IsuTashtanbekov/s-network.git/static/js/916.c91b0f0f.chunk.js",
+    "index.html": "/IsuTashtanbekov/s-network.git/index.html",
+    "main.33cda895.css.map": "/IsuTashtanbekov/s-network.git/static/css/main.33cda895.css.map",
+    "main.517edeba.js.map": "/IsuTashtanbekov/s-network.git/static/js/main.517edeba.js.map",
+    "916.454b34a9.chunk.css.map": "/IsuTashtanbekov/s-network.git/static/css/916.454b34a9.chunk.css.map",
+    "916.c91b0f0f.chunk.js.map": "/IsuTashtanbekov/s-network.git/static/js/916.c91b0f0f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7247e590.css",
-    "static/js/main.031729b8.js"
+    "static/css/main.33cda895.css",
+    "static/js/main.517edeba.js"
   ]
 }
