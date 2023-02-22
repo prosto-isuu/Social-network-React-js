@@ -1,11 +1,11 @@
 {
+  "homepage": "https://isutashtanbekov.github.io/s-network",
   "name": "my-social",
   "jest": {
     "transformIgnorePatterns": [
       "node_modules/(?!axios)/"
     ]
   },
-  "homepage": "https://isutashtanbekov.github.io/s-network/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
