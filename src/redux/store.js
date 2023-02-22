@@ -4,6 +4,7 @@ import dialogsReducer from "./dialogs-reducer";
 import profileReducer from "./profile-reducer";
 import usersReducer from "./users-reducers";
 import thunk from "redux-thunk";
+import {composeWithDevTools} from "redux-devtools-extension";
 
 const reducers = combineReducers({
     Auth: authReducer,
@@ -12,7 +13,7 @@ const reducers = combineReducers({
     Users: usersReducer
 })
 
-const store = createStore(reducers, applyMiddleware(thunk))
+const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunk)))
 
 window.store = store
 

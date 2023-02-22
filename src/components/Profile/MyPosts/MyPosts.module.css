@@ -1,18 +1,9 @@
 .profile {
     grid-area: content;
-    background: green;
+    /*background: green;*/
 }
 
-.myPosts img {
-    width: 100px;
-    height: 100px;
-}
 
-.myPosts {
-    color: gold;
-    font-size: 20px;
-    font-family: -apple-system;
-}
 
 .users {
     border-radius: 10px;
@@ -25,4 +16,17 @@
 .users img {
     width: 100px;
     height: 100px;
+}
+
+.img img {
+    width: 800px;
+    height: 500px;
+    border-radius: 30px;
+}
+
+.myPosts {
+    margin-top: 20px;
+    border-radius: 30px;
+    padding: 20px;
+    background-color: white;
 }

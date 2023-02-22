@@ -24,7 +24,11 @@ const Status = (props) => {
         <div>
             {!editMode &&
                 <div>
-                <span onDoubleClick={activeStatus}>
+                <span onDoubleClick={activeStatus} style={ {
+                    background:'azure',
+                    padding:'10px',
+                    borderRadius:'5px'
+                }}>
                     Status:{status}
                 </span>
                 </div>}

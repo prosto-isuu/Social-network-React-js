@@ -1,23 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .nav {
     grid-area: nav;
-    background: bisque;
-    padding: 20px;
+    padding: 5px;
     justify-content: center;
+    font-family: 'Roboto';
 }
 
 .item {
-    text-align: center;
-    color: white;
-    background-color: darkred;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 20px;
-
+    padding: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
 }
-
 
 .item a {
-    color: white;
-    text-decoration: none;
+    display: flex;
     text-transform: uppercase;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
+
+/* 778899 */
