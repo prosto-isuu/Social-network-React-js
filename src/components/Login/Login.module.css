@@ -1,0 +1,25 @@
+.verificationBlock {
+    background-color: white;
+    padding: 50px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.login {
+    color: #1a73e8;
+}
+
+.login:hover {
+    cursor: pointer;
+
+}
+
+.register:hover {
+    cursor: pointer;
+}
+
+.register {
+    color: #1a73e8;
+}

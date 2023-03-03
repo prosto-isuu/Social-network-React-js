@@ -11,6 +11,5 @@ export const postsSelector = state => {
 }
 
 export const FilteredVipUsers = createSelectorHook(postsSelector, (users) => {
-    console.log('Render')
     return users.Profile.posts
 })

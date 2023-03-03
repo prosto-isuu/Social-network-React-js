@@ -22,6 +22,10 @@
     text-decoration: none;
 }
 
+.item a:hover {
+    background-color: rgb(240 240 240);
+}
+
 
 .profilePhotosBlock {
     display: grid;

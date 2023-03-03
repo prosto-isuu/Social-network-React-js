@@ -14,6 +14,7 @@ const Navbar = (props) => {
                 <div className={s.item}><NavLink to='/dialogs'><BiMessageDetail/>Сообщение</NavLink></div>
                 <div className={s.item}><NavLink to='/users'><AiFillHome/>Друзья</NavLink></div>
                 <div className={s.item}><NavLink to='/new'><AiFillHome/>Лента</NavLink></div>
+                <div className={s.item}><NavLink to='/login'><AiFillHome/>Логин</NavLink></div>
 
         </div>
         </>

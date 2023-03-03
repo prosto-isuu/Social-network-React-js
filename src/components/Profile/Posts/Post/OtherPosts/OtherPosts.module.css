@@ -51,3 +51,19 @@
     background-color: rgb(184, 182, 182);
 
 }
+
+.img {
+    padding: 20px;
+    margin: 20px;
+}
+
+.title {
+    background-color:  rgb(184, 182, 182);
+    margin: 20px;
+    text-transform: uppercase;
+}
+
+.comment {
+    display: flex;
+    flex-wrap: wrap;
+}

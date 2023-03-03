@@ -1,5 +1,4 @@
 import {profileAPI, usersAPI} from "../components/api/userApi";
-import {PostsApi} from "../components/api/postsApi";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -12,14 +11,15 @@ const SET_POSTS = "SET_POSTS"
 
 let initialState = {
     posts: [],
-    newPostText: 'it-kamasutra.com',
+    newPostText: '',
     profile: null,
     status: "",
-    obj: [1,2 ,3],
+    post: [
+        {id:1, name:'Henry', likesCount:1, }
+    ]
 };
 
 const profileReducer = (state = initialState, action) => {
-
     switch(action.type) {
         case ADD_POST: {
             let newPost = {
@@ -74,14 +74,6 @@ export const deletePost = (postId) => ({type: DELETE_POST, postId})
 export const addNewObj = (obj) => ({type: GET_NEW_OBJECT, obj})
 export const setPosts = (payload) => ({type: SET_POSTS, payload})
 
-export const setPostFromProfile = () => {
-    return dispatch => {
-        PostsApi.getPosts().then( res => {
-            console.log(res.data)
-        })
-    }
-
-}
 export const getUserProfile = (userId) => (dispatch) => {
     usersAPI.getProfile(userId).then(response => {
         dispatch(setUserProfile(response.data));

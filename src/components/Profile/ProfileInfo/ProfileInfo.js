@@ -4,8 +4,8 @@ import s from './ProfileInfo.module.css'
 import { RiLiveLine } from 'react-icons/ri';
 import { FaRegImage } from 'react-icons/fa';
 import { BsFillEmojiHeartEyesFill } from 'react-icons/bs';
+import axios from "axios";
 const ProfileInfo = (props) => {
-    console.log(props)
     return (
         <div>
             <div className={s.navbar}>
@@ -27,5 +27,19 @@ const ProfileInfo = (props) => {
         </div>
     );
 };
+
+class ProfileInfoClass extends React.Component {
+    componentDidMount() {
+        axios.get("").then( response => {
+
+        })
+    }
+
+    render() {
+        return<>
+        </>
+    }
+}
+
 
 export default ProfileInfo;

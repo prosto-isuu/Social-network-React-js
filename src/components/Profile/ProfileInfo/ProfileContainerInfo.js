@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import Profile from "./Profile";
+import Profile from "../ProfileHome/ProfileHome";
 import {compose} from "redux";
 import {connect} from "react-redux";
-import {getStatus, getStatusFake, updateStatus} from "../../redux/profile-reducer";
-import {profileAPI} from "../api/userApi";
-import {authSelector, statusSelector} from "../../redux/selectors/auth-selector";
-import {withAuthRedirect} from "../hoc/WithAuthRedirect";
-const ProfileContainer = (props) => {
+import {getStatus, getStatusFake, updateStatus} from "../../../redux/profile-reducer";
+import {profileAPI} from "../../api/userApi";
+import {authSelector, statusSelector} from "../../../redux/selectors/auth-selector";
+import {withAuthRedirect} from "../../hoc/WithAuthRedirect";
+const ProfileContainerInfo = (props) => {
     const [status, setStatus] = useState()
     useEffect(() => {
         getStatusFake(2)
@@ -38,5 +38,5 @@ const mapToStateProps = (state) => {
 export default compose(
     connect(mapToStateToProps, {getStatus, updateStatus, getStatusFake}),
     // withAuthRedirect
-)(ProfileContainer);
+)(ProfileContainerInfo);
 

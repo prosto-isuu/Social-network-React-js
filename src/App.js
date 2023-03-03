@@ -3,10 +3,11 @@ import Navbar from './components/Navbar/Navbar';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import React from "react";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
+import ProfileContainer from "./components/Profile/ProfileInfo/ProfileContainerInfo";
 import { Suspense, lazy } from 'react';
 import UsersContainer from './components/Users/UsersContainer';
-import Users from './components/Users/Users';
+import Login from './components/Login/Login';
+import ProfileHome from "./components/Profile/ProfileHome/ProfileHome";
 const Dialogs = lazy(() => import("./components/Dialogs/Dialogs"));
 
 function App(props) {
@@ -18,10 +19,10 @@ function App(props) {
                 <Navbar/>
                 <div className="app-wrapper-content">
                     <Routes>
-                        <Route path="/profile/*" element={<ProfileContainer/>}/>
+                        <Route path="/profile/*" element={<ProfileHome/>}/>
                         <Route exact path="/dialogs" element={<Dialogs/>}/>
-                        <Route exact path="/login" element={<Users/>}/> 
                         <Route exact path="/users" element={<UsersContainer/>}/>
+                        <Route exact path="/login" element={<Login/>}/>
                     </Routes>
                 </div>
                 </Suspense>
