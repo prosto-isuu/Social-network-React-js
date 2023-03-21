@@ -1,59 +1,39 @@
-// import { useEffect, useState } from "react"
-// import { connect } from "react-redux"
-// import { compose } from "redux"
-// import axios from "axios"
-// import Users from "./Users"
-// import {unfollow, follow} from '../../redux/users-reducers'
-//
-// const UsersContainer = (props) => {
-//     const [users, setUsers] = useState([])
-//     useEffect(() => {
-//         axios.get("https://social-network.samuraijs.com/api/1.0/users").then( response => {
-//             setUsers(response.data.data)
-//         })
-//     }, [])
-//     return(
-//         <Users users={users} {...props}/>
-//     )
-// }
-//
-// const mapToStateToProps = (state) => {
-//     return{
-//         // users: state
-//     }
-// }
-//
-// export default compose(
-//     connect(mapToStateToProps,{unfollow, follow})
-// )(UsersContainer);
-
-import Users from "./Users";
-import {useEffect, useState} from "react";
 import axios from "axios";
-import {compose} from "redux";
-import {connect} from "react-redux";
+import React from "react";
+import Users from "./Users";
+import { compose } from "redux";
+import { connect } from "react-redux";
+import { follow } from "../../redux/users-reducers";
+import { unfollow } from "../../redux/users-reducers";
+
+
 
 const UsersContainer = (props) => {
-    const [users, setUsers] = useState([])
-    useEffect(() => {
-        const response =  axios.get("https://social-network.samuraijs.com/api/1.0/users").then(
-            response => {
-                setUsers(response.data)
-            }
-        )
+    console.log(props)
+    const [users, setUsers] = React.useState([])
+    console.log(users)
+    React.useEffect(() => {
+        axios.get('https://social-network.samuraijs.com/api/1.0/users').then( result => {
+            setUsers(result.data.items)
+            console.log(result.data.items)
+        })
     }, [])
+
     return(
-        <Users users={users}/>
+        <div>
+            <Users users={users} {...props} />
+        </div>
     )
 }
 
-const mapToStateToProps = (state) => {
+const mapStateToProps = (state) => {
     return{
-
+        
     }
 }
 
 
+
 export default compose(
-    connect()
+    connect(mapStateToProps, {follow, unfollow})
 )(UsersContainer);

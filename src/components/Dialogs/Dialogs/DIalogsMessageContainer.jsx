@@ -1,9 +1,26 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { compose } from 'redux'
+import DialogMessage from './DialogMessage';
+import { updateInputBox } from '../../../redux/dialogs-reducer';
+import { sendMessageCreator } from '../../../redux/dialogs-reducer';
 
-function DIalogsMessageContainer() {
+
+function DialogsMessageContainer({messages, sendMessageCreator}) {
+  console.log(sendMessageCreator)
   return (
-    <div>DIalogsMessageContainer</div>
+    <>
+      <DialogMessage messages={messages} sendMessageCreator={sendMessageCreator}/>
+    </>
   )
 }
 
-export default DIalogsMessageContainer
+const mapStateToProps = (state) => {
+  return{
+    messages: state.Dialogs.messages,
+  }
+}
+
+export default compose(
+  connect(mapStateToProps, {sendMessageCreator})
+)(DialogsMessageContainer);

@@ -1,40 +1,66 @@
-.navbar {
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
+/*.navbar {*/
+/*    background-color: white;*/
+/*    padding: 10px;*/
+/*    border-radius: 5px;*/
+/*    margin: 10px;*/
+/*}*/
+
+/*.statusBar img {*/
+/*    width: 70px;*/
+/*    height:70px;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*.statusBar {*/
+/*    display: flex;*/
+/*    grid-template-columns: 1fr 3fr;*/
+/*    justify-content: space-around;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.inlineBlock {*/
+/*    display: flex;*/
+/*    justify-content: space-around;*/
+/*    align-items: center;*/
+/*    padding: 2px;*/
+/*}*/
+
+/*.inlineBlock button {*/
+/*    padding: 5px;*/
+/*    border: none;*/
+/*    border-radius: 10px;*/
+/*    width: 120px;*/
+/*    height: 30px;*/
+/*    text-transform: uppercase;*/
+/*}*/
+
+/*.inlineBlock button:hover {*/
+/*    background-color: rgb(184, 182, 182);*/
+/*    cursor: pointer;*/
+/*}*/
+
+.userName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #a4a2a2;
+    width: 90vh;
+    height: 40px;
+}
+
+.usersImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    background-color: #a4a2a2;
     margin: 10px;
 }
 
-.statusBar img {
-    width: 70px;
-    height:70px;
-    border-radius: 5px;
-}
-
-.statusBar {
+.activeBlock {
     display: flex;
-    grid-template-columns: 1fr 3fr;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.inlineBlock {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 2px;
-}
-
-.inlineBlock button {
-    padding: 5px;
-    border: none;
-    border-radius: 10px;
-    width: 120px;
-    height: 30px;
-    text-transform: uppercase;
-}
-
-.inlineBlock button:hover {
-    background-color: rgb(184, 182, 182);
-    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
 }

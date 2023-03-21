@@ -10,35 +10,28 @@ const SET_POSTS = "SET_POSTS"
 
 
 let initialState = {
-    posts: [],
-    newPostText: '',
+    posts: [
+        {title:'Все будет отлично!', body:'Кчау', date:Date.now(), url:'https://i.pinimg.com/564x/b9/ff/e3/b9ffe394ca6fe47ca5373ed214e31f49.jpg'}
+    ],
     profile: null,
     status: "",
-    post: [
-        {id:1, name:'Henry', likesCount:1, }
-    ]
 };
 
 const profileReducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_POST: {
             let newPost = {
-                id: 5,
-                message: state.newPostText,
-                likesCount: 0
+                body:'Все будет Ок!',
+                title: action.title,
+                date:null,
+                likesCount: 0,
+                url:'https://i.pinimg.com/564x/48/8f/3e/488f3e3e85c9d9c13b86a155288bcf26.jpg',
             };
             return {
                 ...state,
                 posts: [...state.posts, newPost],
-                newPostText: ''
             };
         }
-        case UPDATE_NEW_POST_TEXT: {
-            return {
-                ...state,
-                newPostText: action.newText
-            }
-        };
         case GET_NEW_OBJECT : {
             return {...state, obj: [action.obj]}
         }
@@ -58,7 +51,7 @@ const profileReducer = (state = initialState, action) => {
         }
         case SET_POSTS : {
             return {
-                ...state, posts: [...action.payload]
+                ...state, posts: [...state.posts, action.payload]
             }
         }
         default:
@@ -73,6 +66,8 @@ export const setStatus = (status) => ({type: SET_STATUS, status})
 export const deletePost = (postId) => ({type: DELETE_POST, postId})
 export const addNewObj = (obj) => ({type: GET_NEW_OBJECT, obj})
 export const setPosts = (payload) => ({type: SET_POSTS, payload})
+export const savePhotoSuccess = (photos) => ({type: SET_POSTS, photos})
+
 
 export const getUserProfile = (userId) => (dispatch) => {
     usersAPI.getProfile(userId).then(response => {
@@ -93,11 +88,8 @@ export const updateStatus = (status) => async(dispatch) => {
                 dispatch(setStatus(status));
             }};
 
-export const getStatusFake =  (userId) =>  async dispatch => {
-    const response = await profileAPI.fakeQuery(userId)
+export const savePhoto = (file) =>  async dispatch => {
+    const response = await profileAPI.savePhoto()
     dispatch(setStatus(response.data))
 }
-export const updateNewPostTextActionCreator = (text) =>
-    ({type: UPDATE_NEW_POST_TEXT, newText: text })
-
 export default profileReducer;

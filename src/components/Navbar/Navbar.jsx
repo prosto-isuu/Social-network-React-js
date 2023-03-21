@@ -4,6 +4,11 @@ import {NavLink} from "react-router-dom";
 import {AiFillHome} from "react-icons/ai";
 import {BiMessageDetail} from "react-icons/bi";
 import {FaUserCheck} from "react-icons/fa";
+import {TbFileLike} from "react-icons/tb";
+import {FiSettings} from "react-icons/fi";
+
+
+
 
 const Navbar = (props) => {
     return (
@@ -13,8 +18,8 @@ const Navbar = (props) => {
             <div className={s.item}><NavLink to='/profile' activeClassname="active"><FaUserCheck/>Ислам Таштанбеков</NavLink></div>
                 <div className={s.item}><NavLink to='/dialogs'><BiMessageDetail/>Сообщение</NavLink></div>
                 <div className={s.item}><NavLink to='/users'><AiFillHome/>Друзья</NavLink></div>
-                <div className={s.item}><NavLink to='/new'><AiFillHome/>Лента</NavLink></div>
-                <div className={s.item}><NavLink to='/login'><AiFillHome/>Логин</NavLink></div>
+                <div className={s.item}><NavLink to='/new'><TbFileLike/>Уведомление</NavLink></div>
+                <div className={s.item}><NavLink to='/login'><FiSettings/>Настройки</NavLink></div>
 
         </div>
         </>

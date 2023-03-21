@@ -4,20 +4,23 @@ import {followACR} from "../../../redux/users-reducers";
 import s from './DialogsMessageBar.module.css'
 
 
-export const DialogMessage = (props) => {
-    const valueOfInput = useRef()
-    console.log(valueOfInput.current)
+export const DialogMessage = ({messages, sendMessageCreator, }) => {
+    console.log(sendMessageCreator)
     const [value, setValues] = useState('')
-    const transformationMessages = props.messages.map((value, index, array) => {
+    const transformationMessages = messages.map((value, index, array) => {
         return <div>
-            {value.message}
+            <div>{`Время: ${13}, Сообщение: ${value.message}`}</div>
         </div>
     })
     const onChangeInput = (event) => [
         setValues(event.currentTarget.value),
-        props.sendMessageCreator(event.currentTarget.value)
-        
     ]
+
+    const sendMessage = () => {
+        sendMessageCreator(value)
+        setValues('')  
+        
+    }
     return (
         <div className={s.item}>
             <div className={s.usersMessage}>
@@ -26,11 +29,10 @@ export const DialogMessage = (props) => {
                 <div>
                     <input 
                     type="text" 
-                    placeholder="type your message..."
+                    placeholder="Напишите ваше сообщение..."
                     onChange={onChangeInput}
-                    value={value}
-                    ref={valueOfInput} />
-                    <button>Send</button>
+                    value={value}/>
+                    <button onClick={sendMessage}>Отправить сообщение</button>
                 </div> 
             </div>
         </div>
