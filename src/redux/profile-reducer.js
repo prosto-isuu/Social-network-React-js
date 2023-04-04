@@ -1,5 +1,5 @@
-import {profileAPI, usersAPI} from "../components/api/userApi";
-import {PostsApi} from "../components/api/postsApi";
+import {profileAPI, usersAPI} from "../api/userApi";
+import {PostsApi} from "../api/postsApi";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -11,7 +11,11 @@ const SET_POSTS = "SET_POSTS"
 
 
 let initialState = {
-    posts: [],
+    posts: [
+        {id:'v1', name:'Billie', },
+        {id:'v1', name:'Billie', },
+        {id:'v1', name:'Billie', },
+    ],
     newPostText: 'it-kamasutra.com',
     profile: null,
     status: "",
@@ -58,7 +62,7 @@ const profileReducer = (state = initialState, action) => {
         }
         case SET_POSTS : {
             return {
-                ...state, posts: [...action.payload]
+                ...state, posts: [...state.posts, ...action.payload]
             }
         }
         default:
@@ -74,13 +78,11 @@ export const deletePost = (postId) => ({type: DELETE_POST, postId})
 export const addNewObj = (obj) => ({type: GET_NEW_OBJECT, obj})
 export const setPosts = (payload) => ({type: SET_POSTS, payload})
 
-export const setPostFromProfile = () => {
-    return dispatch => {
-        PostsApi.getPosts().then( res => {
-            console.log(res.data)
-        })
+export const setUsers = () => {
+    return async dispatch => {
+        const response = await PostsApi.getPosts()
+        dispatch(setPosts(response))
     }
-
 }
 export const getUserProfile = (userId) => (dispatch) => {
     usersAPI.getProfile(userId).then(response => {

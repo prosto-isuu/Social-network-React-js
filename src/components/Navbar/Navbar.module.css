@@ -1,39 +1,35 @@
-.nav {
-    grid-area: nav;
-    padding: 5px;
-    justify-content: center;
-}
-
-.item {
-    padding: 10px;
-    padding-bottom: 10px;
-    padding-right: 10px;
-}
-
-.item a {
-    display: flex;
-    text-transform: uppercase;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: white;
-    color: black;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-
-.profilePhotosBlock {
+.navbar {
     display: grid;
-    justify-content: center;
     align-items: center;
+    width: 200px;
+    padding: 8px;
+    background-color: #026aa7;
+    color: white;
+    grid-area: navbar;
 }
 
-.profilePhotosBlock img {
-    border-radius: 50%;
-
+.userPhoto {
+    height: 150px;
+    margin-right: 8px;
 }
 
-.headerLogo{
-    
+.link {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
 }
+
+.link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+

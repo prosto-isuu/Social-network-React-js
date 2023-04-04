@@ -1,30 +1,36 @@
 import React from 'react'
-import s from './Header.module.css'
-import { FaUserSlash } from 'react-icons/fa';
-import { CgLogIn } from 'react-icons/cg';
-import { useSelector } from 'react-redux';
-import { BsSearch } from 'react-icons/bs';
+import style from './Header.module.css'
+import {FaUserSlash} from 'react-icons/fa';
+import {CgLogIn} from 'react-icons/cg';
+import {useSelector} from 'react-redux';
+import {BsSearch} from 'react-icons/bs';
+import MyButton from "../UI/Button/MyButton";
+import MyInput from "../UI/Input/MyInput";
 
 
-function Header(props) {
-    const isAuth = useSelector( state => state.Auth.IsAuth)
+function Header() {
+
+    const isAuth = useSelector(state => state.Auth.IsAuth);
+
     return (
-        <div className={s.header}>
-            <div className={s.header_logo}>
-                <div>
-                <img src="https://i.ibb.co/RCzFrBG/1.png" className={s.img}/>
-                </div>
-                <div className={s.inputBlock}>
-                    <div className={s.auth}>
-                    <input type="text" placeholder="Search for something..." className={s.input}/>
-                    <button className={s.searchBtn}><BsSearch/></button>
-                    <div className={s.verificationExamination}>
-                    {isAuth? <div><button className={s.btn}><FaUserSlash/>Entrance</button></div> : <div><button><CgLogIn/>Login</button></div>}
-                    </div>
-                    </div>
-                </div>
+        <div className={style.header}>
+            <img
+                src="https://i.ibb.co/RCzFrBG/1.png"
+                className={style.logo}
+            />
+            <MyInput/>
+            <MyButton>
+                <BsSearch/>
+            </MyButton>
+            <div
+                className={style.checkAuth}>
+                {isAuth
+                    ? <MyButton><FaUserSlash/>Entrance</MyButton>
+                    : <MyButton><CgLogIn/>Login</MyButton>
+                }
             </div>
         </div>
     )
 }
+
 export default Header;

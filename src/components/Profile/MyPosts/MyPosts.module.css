@@ -1,53 +1,40 @@
-.profile {
-    grid-area: content;
-    /*background: green;*/
-}
-
-
-
-.users {
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    background-color: azure;
-    border: 1px solid black;
-}
-
-.users img {
-    width: 100px;
-    height: 100px;
-}
-
-.img img {
-    width: 800px;
-    height: 500px;
-    border-radius: 30px;
-}
-
 .myPosts {
-    margin-top: 20px;
-    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
     padding: 20px;
-    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.image {
+    width: 100%;
+    border-radius: 10px;
 }
 
 .interactionBlock {
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
 }
 
-.interactionBlock button {
-        padding: 5px;
-        border: none;
-        border-radius: 10px;
-        /* width: 120px; */
-        /* height: 30px; */
-        text-transform: uppercase;
+
+
+.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
 }
 
-.interactionBlock button:hover {
-    cursor: pointer;
-    background-color: rgb(184, 182, 182);
 
-}

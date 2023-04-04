@@ -1,6 +1,6 @@
-import s from "../../Profile/Profile.module.css";
+import s from "../../components/Profile/Profile.module.css";
 import React from "react";
-import Preloader from './../../assets/images/preloader.gif'
+import Preloader from '../../assets/images/preloader.gif'
 
 const PreloaderComponents = (props) => {
     return(

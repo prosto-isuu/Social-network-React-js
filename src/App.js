@@ -2,28 +2,31 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import React from "react";
-import HeaderContainer from "./components/Header/HeaderContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
-import { Suspense, lazy } from 'react';
-import UsersContainer from './components/Users/UsersContainer';
-import Users from './components/Users/Users';
-const Dialogs = lazy(() => import("./components/Dialogs/Dialogs"));
+import {Suspense, lazy} from 'react';
+import {routes} from "./Routes/routes";
+import Header from "./components/Header/Header";
+
+const Dialogs = lazy(() => import("./components/pages/Dialogs/Dialogs"));
 
 function App(props) {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Suspense fallback={<div>Loading...</div>}>
-                <HeaderContainer/>
-                <Navbar/>
-                <div className="app-wrapper-content">
-                    <Routes>
-                        <Route path="/profile/*" element={<ProfileContainer/>}/>
-                        <Route exact path="/dialogs" element={<Dialogs/>}/>
-                        <Route exact path="/login" element={<Users/>}/> 
-                        <Route exact path="/users" element={<UsersContainer/>}/>
-                    </Routes>
-                </div>
+                    <Header/>
+                    <Navbar/>
+                    <div className="app-wrapper-content">
+                        <Routes>
+                            {
+                                routes.map(route => {
+                                    return <Route
+                                        path={route.path}
+                                        element={<route.element/>}
+                                    />
+                                })
+                            }
+                        </Routes>
+                    </div>
                 </Suspense>
             </div>
         </BrowserRouter>

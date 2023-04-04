@@ -1,79 +1,22 @@
 .header {
-    grid-area: header;
-    margin-bottom: 20px;
-    height: 60px;
-}
-
-.header_logo {
-    width: 100%;
-    background-color: white;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
     align-items: center;
-    position: fixed;
-    justify-content: space-around;
-}
-.img {
-    width: 50px;
-    height: 50px;
-}
-
-.loginBlock {
-    display: flex;
-}
-.loginBlock a {
-    padding: 10px;
-    background-color: black;
-    color: white;
-    list-style: none;
+    height: 80px;
+    width: 100%;
+    padding: 4px 40px;
+    background-color: #fff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    grid-area: header;
 }
 
-.inputBlock {
-    display: grid;
-    grid-template-columns: 10fr 1fr;
-}
-
-.auth {
-    justify-content: space-around;
-    display: grid;
-    grid-template-columns: 8fr 2fr 2fr;
-}
-
-.verificationExamination {
-    display: flex;
-    justify-content: right;
-}
-
-.verificationExamination button {
-    font-family: inherit;
-    color: white;
-    padding: 10px;
-    background-color: #1a73e8;
-    text-transform: uppercase;
-    border: 1px solid rgba(234, 230, 226, 0.63);
-    box-shadow: 8px 8px 16px rgba(206,89,55,0);
-    border-radius: 15px;
-}
-
-.verificationExamination button:hover {
+.logo {
+    height: 60px;
     cursor: pointer;
 }
 
-.searchBtn {
-    border: none;
-    margin: 4px;
-    width: 50%;
-    padding: 2px;
-    border-radius: 80px;
-    background-color: #1a73e8;
-    color: white;
-}
-
-.searchBtn:hover {
-    cursor: pointer;
-}
-
-.input {
-    border: 1px solid rgb(164, 162, 162);
-    border-radius: 5px;
+.checkAuth {
+    display: flex;
+    align-items: center;
 }
