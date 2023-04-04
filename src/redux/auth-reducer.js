@@ -20,7 +20,5 @@ const AuthReducer = (state = defaultState, action) => {
     }
 }
 
-
-
 export const AuthVerification = (id, login, email) => ({type:AUTH_ME, id, login, email})
 export default AuthReducer;

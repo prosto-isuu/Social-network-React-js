@@ -8,12 +8,44 @@ const DELETE_POST = "DELETE_POST";
 const GET_NEW_OBJECT = "GET_NEW_OBJECT"
 const SET_POSTS = "SET_POSTS"
 
+type PostsType = {
+    title:string
+    body:string
+    date:any
+    url:string | null
+
+}
+
+type ContactsType = {
+    github:string
+    facebook:string
+    vk:string
+    instagram:string
+    twitter:string
+    website:string
+    mainLink:string
+}
+
+type ProfileType = {
+    userId:number
+    lookingForJob:boolean
+    lookingForJobDescription: string
+    fullName: string
+    contacts: ContactsType
+}
+
+type PhotosType = {
+    small:string | null
+    large:string | null
+}
+
+
 
 let initialState = {
     posts: [
         {title:'Все будет отлично!', body:'Кчау', date:Date.now(), url:'https://i.pinimg.com/564x/b9/ff/e3/b9ffe394ca6fe47ca5373ed214e31f49.jpg'}
-    ],
-    profile: null,
+    ] as Array<PostsType>,
+    profile: null as ProfileType,
     status: "",
 };
 
@@ -81,6 +113,7 @@ export const getStatus = (userId) => (dispatch) => {
             dispatch(setStatus(response.data));
         });
 }
+
 
 export const updateStatus = (status) => async(dispatch) => {
     const response = await profileAPI.updateStatus(status)
