@@ -1,19 +1,22 @@
-.header {
+header {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 80px;
     width: 100%;
     padding: 4px 40px;
-    background-color: #fff;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
     grid-area: header;
+    position:fixed;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+    background-color: #f2f2f2;
 }
 
 .logo {
     height: 60px;
+    width: 60px;
     cursor: pointer;
+    border-radius: 50%;
 }
 
 .checkAuth {

@@ -1,21 +1,20 @@
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import React from "react";
 import {Suspense, lazy} from 'react';
-
 import Header from "./components/Header/Header";
 import {publicRoutes} from "./Routes/routes";
+import Loader from "./components/UI/Loader/Loader";
+import Sidebar from "./components/Navbar/Navbar";
+//const Dialogs = lazy(() => import("./components/pages/Dialogs/Dialogs"));
 
-const Dialogs = lazy(() => import("./components/pages/Dialogs/Dialogs"));
-
-function App(props) {
+function App() {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader/>}>
                     <Header/>
-                    <Navbar/>
+                    <Sidebar/>
                     <div className="app-wrapper-content">
                         <Routes>
                             {

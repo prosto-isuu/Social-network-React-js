@@ -35,3 +35,24 @@
 .followBlock {
     margin-left: auto;
 }
+
+.pages {
+    margin: 10px;
+    border: 1px solid darkblue;
+}
+
+.page {
+    cursor: pointer;
+    border-radius: 100%;
+    border: 1px solid cadetblue;
+    padding: 10px;
+    margin: 20px;
+}
+
+.currentPage {
+    cursor: pointer;
+    border-radius: 100%;
+    border: 4px solid cadetblue;
+    padding: 10px;
+    margin: 20px;
+}
