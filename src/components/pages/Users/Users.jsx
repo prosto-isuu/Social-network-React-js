@@ -3,14 +3,21 @@ import {follow, getUsers, unfollow} from "../../../redux/users-reducers";
 import style from './Users.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import MyButton from "../../UI/Button/MyButton";
+import {useNavigate} from "react-router-dom";
 
 
 const Users = (props) => {
 
+    const history = useNavigate();
+
+    const onCrossingProfile = (id) => {
+        history(`/users/${id}`)
+    }
+
     const users = useSelector(state => state.Users.users)
     const dispatch = useDispatch()
     const onFollowHandle = (userId, put) => {
-        console.log( put)
+        console.log(put)
         dispatch(follow(userId))
     }
     const onUnsubscribeHandle = (userId) => {
@@ -34,6 +41,7 @@ const Users = (props) => {
                         <div className={style.aboutUser}>
                             <img
                                 className={style.image}
+                                onClick={e => onCrossingProfile(user.id)}
                                 src={user
                                     ? "https://i.ibb.co/Ht3THKM/Screen-Shot-2023-04-04-at-13-31-06.png"
                                     : null

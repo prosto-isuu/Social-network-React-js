@@ -1,5 +1,5 @@
 import React from 'react';
-import Status from "../../../command/Status";
+import Status from "../../UI/StatusBar/Status";
 import s from './ProfileInfo.module.css'
 import {RiLiveLine} from 'react-icons/ri';
 import {FaRegImage} from 'react-icons/fa';

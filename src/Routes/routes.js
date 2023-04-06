@@ -5,12 +5,21 @@ import Users from "../components/pages/Users/Users";
 import {AiFillHome} from "react-icons/ai";
 import {BiMessageDetail} from "react-icons/bi";
 import {FaUserCheck} from "react-icons/fa";
+import UsersPage from "../components/pages/Users/UserPage/UsersPage";
 
-export const routes = [
+export const publicRoutes = [
     {path:'/profile', element:Profile},
     {path:'/dialogs', element:Dialogs},
     {path:'/login', element:Login},
     {path:'/users', element:Users},
+    {path:'/users/:id', element:UsersPage},
+]
+export const privateRoutes = [
+    {path:'/profile', element:Profile},
+    {path:'/dialogs', element:Dialogs},
+    {path:'/login', element:Login},
+    {path:'/users', element:Users},
+    {path:'/users/:id', element:UsersPage},
 ]
 
 export const routesLinks = [

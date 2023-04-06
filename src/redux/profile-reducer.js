@@ -1,5 +1,6 @@
 import {profileAPI, usersAPI} from "../api/userApi";
 import {PostsApi} from "../api/postsApi";
+import {v1} from "uuid";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -12,39 +13,29 @@ const SET_POSTS = "SET_POSTS"
 
 let initialState = {
     posts: [
-        {id:'v1', name:'Billie', },
-        {id:'v1', name:'Billie', },
-        {id:'v1', name:'Billie', },
+        {id: v1(), icon:'https://i.pinimg.com/564x/3f/90/4d/3f904df6be16845d5a1853ec24547675.jpg', likes:1, description:'Круто получилось', comments:[{}], },
+        {id: v1(), icon:'https://i.pinimg.com/564x/3f/90/4d/3f904df6be16845d5a1853ec24547675.jpg', likes:2, description:'Круто получилось', comments:[{}], },
+        {id: v1(), icon:'https://i.pinimg.com/564x/58/31/e2/5831e2dc2311ca78d7fc787bd188a27e.jpg', likes:3, description:'Круто получилось', comments:[{}], },
+        {id: v1(), icon:'https://i.pinimg.com/564x/11/2c/c1/112cc179c8f93a5a918e63b2fd966bd5.jpg', likes:4, description:'Круто получилось', comments:[{}], },
     ],
-    newPostText: 'it-kamasutra.com',
     profile: null,
     status: "",
-    obj: [1,2 ,3],
 };
 
 const profileReducer = (state = initialState, action) => {
-
     switch(action.type) {
         case ADD_POST: {
             let newPost = {
-                id: 5,
-                message: state.newPostText,
-                likesCount: 0
+                id: v1(),
+                message: action.message,
+                likesCount: 0,
+                icon: action.icon,
+                comments:[null]
             };
             return {
                 ...state,
                 posts: [...state.posts, newPost],
-                newPostText: ''
             };
-        }
-        case UPDATE_NEW_POST_TEXT: {
-            return {
-                ...state,
-                newPostText: action.newText
-            }
-        };
-        case GET_NEW_OBJECT : {
-            return {...state, obj: [action.obj]}
         }
         case SET_STATUS: {
             return {
@@ -71,7 +62,7 @@ const profileReducer = (state = initialState, action) => {
 }
 
 
-export const addPostActionCreator = () => ({type: ADD_POST})
+export const addPostActionCreator = (message, icon) => ({type: ADD_POST, message, icon })
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export const setStatus = (status) => ({type: SET_STATUS, status})
 export const deletePost = (postId) => ({type: DELETE_POST, postId})
@@ -84,17 +75,19 @@ export const setUsers = () => {
         dispatch(setPosts(response))
     }
 }
-export const getUserProfile = (userId) => (dispatch) => {
-    usersAPI.getProfile(userId).then(response => {
-        dispatch(setUserProfile(response.data));
-    });
+
+export const getUserProfile = (id) => {
+    return async dispatch => {
+        const response = await profileAPI.getProfile(id);
+        dispatch(setUserProfile(response.data))
+    }
 }
 
-export const getStatus = (userId) => (dispatch) => {
-    profileAPI.getStatus(userId)
-        .then(response => {
-            dispatch(setStatus(response.data));
-        });
+export const getStatus = id => {
+    return async dispatch => {
+        const response = await profileAPI.getStatus(id)
+        dispatch(setStatus(response.data))
+    }
 }
 
 export const updateStatus = (status) => async(dispatch) => {
@@ -103,11 +96,5 @@ export const updateStatus = (status) => async(dispatch) => {
                 dispatch(setStatus(status));
             }};
 
-export const getStatusFake =  (userId) =>  async dispatch => {
-    const response = await profileAPI.fakeQuery(userId)
-    dispatch(setStatus(response.data))
-}
-export const updateNewPostTextActionCreator = (text) =>
-    ({type: UPDATE_NEW_POST_TEXT, newText: text })
 
 export default profileReducer;

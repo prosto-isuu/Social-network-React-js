@@ -3,8 +3,9 @@ import Navbar from './components/Navbar/Navbar';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import React from "react";
 import {Suspense, lazy} from 'react';
-import {routes} from "./Routes/routes";
+
 import Header from "./components/Header/Header";
+import {publicRoutes} from "./Routes/routes";
 
 const Dialogs = lazy(() => import("./components/pages/Dialogs/Dialogs"));
 
@@ -18,7 +19,7 @@ function App(props) {
                     <div className="app-wrapper-content">
                         <Routes>
                             {
-                                routes.map(route => {
+                                publicRoutes.map(route => {
                                     return <Route
                                         path={route.path}
                                         element={<route.element/>}
