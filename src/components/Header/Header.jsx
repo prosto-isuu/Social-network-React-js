@@ -13,21 +13,28 @@ function Header() {
     const isAuth = useSelector(state => state.Auth.IsAuth);
 
     return (
-        <header className={style.header}>
+        <header
+            className={style.header}
+        >
             <img
                 src="https://i.pinimg.com/564x/dc/a8/0b/dca80b34c94c2f25089b98e08503121a.jpg"
                 className={style.logo}
             />
-            <div>
+            <div
+                className={style.authButton}
+            >
                 <MyInput
+                    type="text"
                     placeholder='Искать на сайте...'
                 />
-                <MyButton>
+                <MyButton
+                >
                     Найти <BsSearch/>
                 </MyButton>
             </div>
             <div
-                className={style.checkAuth}>
+                className={style.checkAuth}
+            >
                 {isAuth
                     ? <MyButton><FaUserSlash/>Выйти</MyButton>
                     : <MyButton><CgLogIn/>Войти</MyButton>

@@ -1,20 +1,71 @@
-.profile {
-    grid-area: content;
-    padding: 20px;
+.myPosts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .img {
+    margin: 1rem;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    max-width: 400px;
+    min-width: 250px;
+}
+
+.img:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.interactionBlock {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.interactionBlock p {
+    margin-right: 0.5rem;
+}
+
+.active {
+    display: flex;
     justify-content: center;
-    background-color: darkred;
 }
 
-.preloader {
-    width: 100px;
-    height: 100px;
-}
-
-.nav {
+.myButton {
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    padding: 0.5rem;
     background-color: #fff;
-    padding: 10px;
+    color: #3b5998;
+    border: 1px solid #3b5998;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+.myButton:hover {
+    background-color: #3b5998;
+    color: #fff;
+}
+
+.myInput {
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+.myInput:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

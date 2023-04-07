@@ -1,45 +1,48 @@
 .sidebar {
     display: grid;
     grid-area: navbar;
+    width: 250px;
+    max-height: 300px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    border-radius: 10px;
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
 }
 
 .sidebarHeader {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 16px;
-    font-weight: 600;
-    font-size: 24px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.profilePhoto {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.sidebarHeader p {
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .sidebarNav {
     display: flex;
     flex-direction: column;
-    padding: 16px;
-    overflow-y: auto;
+    padding: 10px;
 }
 
-.sidebarNav a {
-    display: block;
-    padding: 8px 16px;
+.link {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 4px;
     font-size: 16px;
-    color: #000;
+    color: #333;
     text-decoration: none;
 }
 
-.sidebarFooter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    font-size: 14px;
-    color: #666;
+.link:hover {
+    background-color: #f3f3f3;
 }

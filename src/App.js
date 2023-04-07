@@ -9,6 +9,8 @@ import Sidebar from "./components/Navbar/Navbar";
 //const Dialogs = lazy(() => import("./components/pages/Dialogs/Dialogs"));
 
 function App() {
+
+
     return (
         <BrowserRouter>
             <div className='app-wrapper'>

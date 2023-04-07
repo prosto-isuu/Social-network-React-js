@@ -1,25 +1,24 @@
-header {
+.header {
     display: grid;
-    justify-content: space-around;
-    align-items: center;
-    height: 80px;
-    width: 100%;
-    padding: 4px 40px;
     grid-area: header;
-    position:fixed;
-    margin-bottom: 80px;
-    text-transform: uppercase;
-    background-color: #f2f2f2;
+    align-items: center;
+    grid-gap: 16px;
+    padding: 16px;
+    background-color: #026aa7;
+    color: #fff;
+}
+
+.authButton {
+    display: flex;
+
 }
 
 .logo {
-    height: 60px;
-    width: 60px;
-    cursor: pointer;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
-.checkAuth {
-    display: flex;
-    align-items: center;
-}
+
+
