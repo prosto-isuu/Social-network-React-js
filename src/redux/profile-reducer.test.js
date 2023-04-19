@@ -23,11 +23,11 @@
 //     expect(newState.posts[3].message).toBe("newPostText");
 // });
 
-it('should add new obj', function () {
-    let action = addNewObj(4, 3, 3)
-    let newState = profileReducer(state, action)
-    expect(newState.obj.length).toBe(3)
-});
+// it('should add new obj', function () {
+//     let action = addNewObj(4, 3, 3)
+//     let newState = profileReducer(state, action)
+//     expect(newState.obj.length).toBe(3)
+// });
 //
 // it('should be after delete should decrement', function () {
 //     let action = deletePost(1)

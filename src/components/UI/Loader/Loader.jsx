@@ -1,15 +1,10 @@
-import React from 'react';
-import style from './Loader.module.css'
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = require("react");
+var Loader_module_css_1 = require("./Loader.module.css");
+var Loader = function (props) {
+    return (<div {...props} className={Loader_module_css_1.default.loader}>
 
-const Loader = (props) => {
-    return (
-        <div
-            {...props}
-            className={style.loader}
-        >
-
-        </div>
-    );
+        </div>);
 };
-
-export default Loader;
+exports.default = Loader;

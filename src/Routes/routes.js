@@ -1,11 +1,11 @@
-import Profile from "../components/Profile/Profile";
-import Dialogs from "../components/pages/Dialogs/Dialogs";
+import Profile from "../components/Profile/Profile.tsx";
 import Login from "../components/Login/Login";
-import Users from "../components/pages/Users/Users";
+import Users from "../components/pages/Users/Users.tsx";
 import {AiFillHome} from "react-icons/ai";
 import {BiMessageDetail} from "react-icons/bi";
 import {FaUserCheck} from "react-icons/fa";
 import UsersPage from "../components/pages/Users/UserPage/UsersPage";
+import Dialogs from "../components/pages/Dialogs/Dialogs";
 
 export const publicRoutes = [
     {path:'/profile', element:Profile},

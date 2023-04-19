@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
 import s from './Dialogs.module.css'
 import {useDispatch, useSelector} from "react-redux";
-import MyTextarea from "../../UI/Textarea/MyTextarea";
-import MyButton from "../../UI/Button/MyButton";
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../redux/dialogs-reducer";
+import MyTextarea from "../../UI/Textarea/MyTextarea.tsx";
+import MyButton from "../../UI/Button/MyButton.tsx";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../redux/dialogs-reducer.ts";
+
 
 function Dialogs(props) {
     const [text, setText] = useState('')

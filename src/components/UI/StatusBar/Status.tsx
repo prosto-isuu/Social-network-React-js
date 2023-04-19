@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {FC, PropsWithChildren} from 'react';
 import {useState} from "react";
 import MyInput from "../Input/MyInput";
 
-const Status = ({status}) => {
+type PropsType = {
+    status: string | null
+}
+
+const Status:FC<PropsWithChildren<PropsType>> = ({status}) => {
 
     const [editMode, setMode] = useState(false)
     const activeStatus = () => {
@@ -24,7 +28,8 @@ const Status = ({status}) => {
                 editMode &&
                 <MyInput
                     placeholder={status || "Нету статуса"}
-                    onBlur={deActiveStatus} autoFocus={true}
+                    onBlur={deActiveStatus}
+                    // autoFocus={true}
                 />
             }
         </div>

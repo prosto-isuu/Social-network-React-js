@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
-import style from './UserPage.module.css'
+import style from './UserPage.module.scss'
 import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {getStatus, getUserProfile} from "../../../../redux/profile-reducer";
-import Status from "../../../UI/StatusBar/Status";
+import Status from "../../../UI/StatusBar/Status.tsx";
 
 const UsersPage = () => {
 
@@ -22,41 +22,44 @@ const UsersPage = () => {
         <div
             className={style.userProfile}
         >
-            <h1>
-                @{profile?.fullName}
-            </h1>
-            <Status
-                status={status}
-            >
+            <div className={style.userPhoto}>
+                <img
+                    className={style.userImage}
+                    src={profile?.photos?.small || 'https://i.pinimg.com/564x/7b/1c/22/7b1c2242284782a94f313633d059cade.jpg'}
+                    alt="user image"
+                />
+            </div>
+            <div className={style.userInfo}>
+                <h1>
+                    @{profile?.fullName}
+                </h1>
+                <Status
+                    status={status}
+                />
+                <h3>
+                    Обо мне: {profile?.aboutMe || 'Нету описания'}
+                </h3>
 
-            </Status>
-            <h3>
-                Обо мне: {profile?.aboutMe || 'Нету описания'}
-            </h3>
-            <img
-                className={style.userImage}
-                src={profile?.photos?.small || 'https://i.pinimg.com/564x/ac/56/85/ac5685e0258ed5a4f0786042a56814d9.jpg'}
-                alt="user image"
-            />
-            <ul
-                className={style.contacts}
-            >
-                <li
-                    className={style.contact}
+                <ul
+                    className={style.contacts}
                 >
-                    Facebook:{profile?.contacts?.facebook  || ' Не указан'}
-                </li>
-                <li
-                    className={style.contact}
-                >
-                    Vk:{profile?.contacts?.vk || ' Не указан'}
-                </li>
-                <li
-                    className={style.contact}
-                >
-                    Instagram:{profile?.contacts?.instagram || ` Не указан`}
-                </li>
-            </ul>
+                    <li
+                        className={style.contact}
+                    >
+                        Facebook:{profile?.contacts?.facebook  || ' Не указан'}
+                    </li>
+                    <li
+                        className={style.contact}
+                    >
+                        Vk:{profile?.contacts?.vk || ' Не указан'}
+                    </li>
+                    <li
+                        className={style.contact}
+                    >
+                        Instagram:{profile?.contacts?.instagram || ` Не указан`}
+                    </li>
+                </ul>
+            </div>
         </div>
     );
 };

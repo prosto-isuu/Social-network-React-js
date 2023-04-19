@@ -1,27 +1,33 @@
 import React from 'react'
-import style from './Header.module.css'
+// @ts-ignore
+import style from './Header.module.scss'
 import {FaUserSlash} from 'react-icons/fa';
 import {CgLogIn} from 'react-icons/cg';
 import {useSelector} from 'react-redux';
 import {BsSearch} from 'react-icons/bs';
 import MyButton from "../UI/Button/MyButton";
 import MyInput from "../UI/Input/MyInput";
+import {AppStateType} from "../../redux/store";
 
 
 function Header() {
 
-    const isAuth = useSelector(state => state.Auth.IsAuth);
+    const isAuth = useSelector((state:AppStateType) => state.Auth.IsAuth);
 
     return (
         <header
             className={style.header}
         >
-            <img
-                src="https://i.pinimg.com/564x/dc/a8/0b/dca80b34c94c2f25089b98e08503121a.jpg"
-                className={style.logo}
-            />
             <div
-                className={style.authButton}
+                className={style.logo}
+            >
+                <img
+                    src="https://i.ibb.co/bHVsX1d/2.png"
+                    alt='логотип'
+                />
+            </div>
+            <div
+                className={style.search}
             >
                 <MyInput
                     type="text"

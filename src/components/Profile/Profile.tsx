@@ -1,21 +1,23 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {setUsers} from "../../redux/users-reducers";
 import {useDispatch, useSelector} from "react-redux";
 import {addPostActionCreator, deletePost} from "../../redux/profile-reducer";
 import MyButton from "../UI/Button/MyButton";
 import {TiMessage} from "react-icons/ti";
 import {BiLike} from "react-icons/bi";
+// @ts-ignore
 import style from './Profile.module.css'
 import MyInput from "../UI/Input/MyInput";
+import {AppStateType} from "../../redux/store";
 
 const Profile = (props) => {
 
-    const [newPostBody, setNewPostBody] = useState('')
-    const [newIconBody, setNewIconBody] = useState('')
-    const [editMode, setEditMode] = useState(false)
+    const [newPostBody, setNewPostBody] = useState<string>('')
+    const [newIconBody, setNewIconBody] = useState<string>('')
+    const [editMode, setEditMode] = useState<boolean>(false)
 
     useEffect(() => {
-        setUsers()
+        setUsers('')
         console.log('brr')
     }, [])
 
@@ -28,7 +30,7 @@ const Profile = (props) => {
     }
 
     const dispatch = useDispatch();
-    const posts = useSelector((state) => state.Profile.posts);
+    const posts = useSelector((state:AppStateType) => state.Profile.posts);
 
     const onAddNewPostHandler = e => {
         dispatch(addPostActionCreator(newPostBody, newIconBody))
@@ -45,19 +47,27 @@ const Profile = (props) => {
                     return <div
                         className={style.img}
                     >
-                        <img
-                            src={post.icon}
-                            className={style.image}
-                        />
+                        <div
+                            className={style.postImage}
+                        >
+                            <img
+                                src={post.icon}
+                                className={style.image}
+                            />
+                        </div>
                         <div className={style.interactionBlock}>
                             <p>{post.likes}</p>
-                            <MyButton>
-                                <BiLike/>
-                            </MyButton>
-                            <MyButton>
-                                <TiMessage/>
-                                {`Комментарии`}
-                            </MyButton>
+                            <p>
+                                <MyButton>
+                                    <BiLike/>
+                                </MyButton>
+                            </p>
+                            <p>
+                                <MyButton>
+                                    <TiMessage/>
+                                    Коментарии
+                                </MyButton>
+                            </p>
                         </div>
                         <div
                             className={style.active}
@@ -102,6 +112,7 @@ const Profile = (props) => {
 
         </div>
     );
-};
+}
+    ;
 
-export default Profile;
+    export default Profile;

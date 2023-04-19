@@ -10,7 +10,6 @@ export const postsSelector = state => {
     return state.Profile.posts
 }
 
-export const FilteredVipUsers = createSelectorHook(postsSelector, (users) => {
-    console.log('Render')
-    return users.Profile.posts
-})
+// export const FilteredVipUsers = createSelectorHook(postsSelector, (users) => {
+//     return users.Profile.posts
+// })

@@ -1,14 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+/* Сброс стилей списков */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Сброс стилей гиперссылок */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Сброс стилей заголовков */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/* Сброс стилей форм */
+input,
+textarea,
+select,
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+    background-color: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Сброс стилей изображений */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .app-wrapper {
     max-width: 1200px;
     display: grid;
     grid-template-areas:
     "header header header"
-    "navbar content content";
+    "navbar content content"
 }
 
 .app-wrapper-content {
     grid-area: content;
 }
+
+
+
+
+
+
+
+
 
 
 

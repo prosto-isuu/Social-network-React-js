@@ -1,18 +1,14 @@
 .myButton {
     display: inline-block;
     font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
     text-align: center;
     white-space: nowrap;
-    vertical-align: middle;
     cursor: pointer;
-    user-select: none;
     padding: 8px 12px;
     border: none;
     border-radius: 3px;
     color: #fff;
-    background-color: #0079bf;
+    background-color: #6b808c;
     box-shadow: none;
     transition: background-color 0.2s ease-in-out;
 }

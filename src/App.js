@@ -2,15 +2,14 @@ import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import React from "react";
 import {Suspense, lazy} from 'react';
-import Header from "./components/Header/Header";
 import {publicRoutes} from "./Routes/routes";
 import Loader from "./components/UI/Loader/Loader";
 import Sidebar from "./components/Navbar/Navbar";
-//const Dialogs = lazy(() => import("./components/pages/Dialogs/Dialogs"));
+import Header from "./components/Header/Header";
+
+/* const Dialogs = lazy(() => import("./components/pages/Dialogs/Dialogs")); */
 
 function App() {
-
-
     return (
         <BrowserRouter>
             <div className='app-wrapper'>

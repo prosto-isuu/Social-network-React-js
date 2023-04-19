@@ -1,0 +1,21 @@
+.sidebar {
+    display: grid;
+    grid-area: navbar;
+    width: 90px;
+    background-color: #fff;
+    color: #333;
+    justify-content: center;
+    height: 100%;
+    align-items: flex-start;
+    padding: 40px 10px;
+    margin: 10px 0;
+    top: 70px;
+    .sidebarNav {
+        display: flex;
+        flex-direction: column;
+        .link {
+            margin: 20px 0;
+            font-size: 25px;
+        }
+    }
+}
