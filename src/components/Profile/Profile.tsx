@@ -17,8 +17,8 @@ const Profile = (props) => {
     const [editMode, setEditMode] = useState<boolean>(false)
 
     useEffect(() => {
-        setUsers('')
-        console.log('brr')
+        // @ts-ignore
+        setUsers()
     }, [])
 
     const onSwitchMode = () => {

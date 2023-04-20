@@ -1,7 +1,15 @@
-import axios, {Axios} from "axios";
+import axios, {AxiosInstance} from "axios";
+import {UserType} from "../redux/users-reducers";
+
+interface UserResponseType {
+    items: Array<UserType>,
+    totalCount: number,
+    error: string | null
+}
 
 
-const instance = axios.create({
+
+const instance: AxiosInstance = axios.create({
     withCredentials: true,
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     headers: {
@@ -11,23 +19,39 @@ const instance = axios.create({
 
 
 export const usersAPI = {
-    getUsers(currentPage = 1, pageSize = 10) {
-        return instance.get(`users?page=${currentPage}&count=${pageSize}`)
+    getUsers(currentPage: number = 1, pageSize: number = 10): Promise<UserResponseType> {
+        return instance.get<UserResponseType>(`users?page=${currentPage}&count=${pageSize}`)
             .then(response => {
                 return response.data;
             });
     },
-    follow(userId: number) {
-        return instance.post<Axios>(`follow/${userId}`)
+    follow(userId: number): Promise<AxiosInstance> {
+        return instance.post(`follow/${userId}`)
     },
-    unfollow(userId: number) {
+    unfollow(userId: number): Promise<AxiosInstance> {
         return instance.delete(`follow/${userId}`)
     },
-    getProfile(userId: number) {
-        console.warn('Obsolete method. Please profileAPI object.')
-        return profileAPI.getProfile(userId);
+}
+
+export const profileAPI = {
+    getProfile(userId: number): Promise<AxiosInstance> {
+        return instance.get(`profile/` + userId);
+    },
+    getStatus(userId: number): Promise<{data: {status: string}}> {
+        return instance.get(`profile/status/` + userId);
+    },
+    updateStatus(status: string): Promise<AxiosInstance> {
+        return instance.put(`profile/status`, {status: status}) as Promise<AxiosInstance>;
+    },
+}
+
+export const authAPI = {
+    me(): Promise<{data: {id: number, email: string, login: string}}> {
+        return instance.get(`auth/me`)
     }
 }
+
+
 
 type ProfileType = {
     userId: number
@@ -50,25 +74,3 @@ type ProfileType = {
     large: string
     URL:null
 }
-
-export const profileAPI =
-    {
-        getProfile(userId: number){
-            return instance.get(`profile/` + userId);
-        },
-        getStatus(userId: number) {
-            return instance.get(`profile/status/` + userId);
-        },
-        updateStatus(status: string) {
-            return instance.put(`profile/status`, {status: status});
-        },
-    }
-
-export const authAPI = {
-    me() {
-        return instance.get(`auth/me`)
-    }
-}
-
-
-authAPI.me().catch((res: number) => res)
